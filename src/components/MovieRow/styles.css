@@ -1,0 +1,49 @@
+.movie_row-list_area {
+  overflow-x: hidden;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.movie_row {
+  display: flex;
+  margin-bottom: 2rem;
+  transition: all ease 0.5s;
+}
+.div-arrow_left,
+.div-arrow_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 225px;
+  font-size: 50px;
+  box-sizing: border-box;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.movie_row-list_area:hover .div-arrow_left,
+.movie_row-list_area:hover .div-arrow_right {
+  opacity: 1;
+}
+.div-arrow_left {
+  left: 0;
+}
+.div-arrow_right {
+  right: 0;
+}
+.movie_row img {
+  width: 150px;
+  transform: scale(0.9);
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.movie_row img:hover {
+  transform: scale(1);
+}

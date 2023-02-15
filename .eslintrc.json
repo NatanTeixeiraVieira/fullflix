@@ -17,6 +17,12 @@
     // Evitar que o eslint reclame sobre a variável "styles" sendo usada antes de ser definida
     "no-use-before-define": ["error", { "variables": false }],
 
+    // Evitar que o eslint reclame sobre utilizar o índice de um array como chave
+    "react/no-array-index-key": "off",
+
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
