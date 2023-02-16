@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Tmdb from '../../services/Tmdb';
 import MovieRow from '../../components/MovieRow/index';
 import FeaturedMovie from '../../components/FeaturedMovie/index';
+import Header from '../../components/Header/index';
 import './styles.css';
 
 export default function Home() {
@@ -23,13 +24,16 @@ export default function Home() {
     loadAll();
   }, []);
   return (
-    <main>
-      {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
-      <section className="movie_list">
-        {movieList.map((item, key) => (
-          <MovieRow item={item} key={key} />
-        ))}
-      </section>
-    </main>
+    <>
+      <Header />
+      <main>
+        {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
+        <section className="movie_list">
+          {movieList.map((item, key) => (
+            <MovieRow item={item} key={key} />
+          ))}
+        </section>
+      </main>
+    </>
   );
 }
