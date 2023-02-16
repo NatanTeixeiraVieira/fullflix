@@ -1,0 +1,72 @@
+.section-featured_movie {
+  height: 100vh;
+}
+.vertical_gradient {
+  height: calc(100% - 9rem);
+  background: linear-gradient(to top, #111, transparent);
+}
+.horizontal_gradient {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(to right, #111 30%, transparent 70%);
+  padding-left: 2rem;
+}
+.featured_movie-name {
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 700;
+}
+.featured_movie-info {
+  display: flex;
+  font-weight: 700;
+}
+.featured_movie-info,
+.featured_movie-description,
+.featured_movie-buttons,
+.featured_movie-genres {
+  margin-top: 1rem;
+}
+.featured_movie-points {
+  color: #46d369;
+  font-size: 1.125rem;
+}
+.featured_movie-year,
+.featured_movie-seasons_number {
+  color: #fff;
+  margin-left: 1rem;
+  font-size: 1.125rem;
+}
+.featured_movie-description {
+  width: 40%;
+  font-size: 1.25rem;
+  color: #999;
+}
+.featured_movie-buttons {
+  display: flex;
+}
+.featured_movie-buttons button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-right: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+.featured_movie-buttons button:hover {
+  opacity: 0.7;
+}
+.featured_movie-button_my_list {
+  background-color: #333;
+  color: #fff;
+}
+.featured_movie-genres {
+  color: #999;
+  font-size: 1.125rem;
+}
+.featured_movie-genres strong {
+  font-weight: 700;
+}

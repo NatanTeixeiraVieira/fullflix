@@ -52,4 +52,5 @@ export default {
       items: await request(`/discover/movie?with_genres=99&${languageAndKey}`),
     },
   ],
+  getMovieInfo: async (id) => id && request(`/tv/${id}?${languageAndKey}`),
 };
