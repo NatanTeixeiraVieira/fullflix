@@ -11,7 +11,7 @@
   justify-content: center;
   height: 100%;
   background: linear-gradient(to right, #111 30%, transparent 70%);
-  padding-left: 2rem;
+  padding: 4.375rem 0 0 2rem;
 }
 .featured_movie-name {
   font-size: 4rem;
