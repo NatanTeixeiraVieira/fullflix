@@ -38,11 +38,12 @@ export default function MovieRow({ item }) {
         </div>
         {item.items.results.length > 0 &&
           item.items.results.map((movie, key) => (
-            <div key={key}>
+            <div className="movie_row-movie" key={key}>
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt="Imagem do filme"
               />
+              <div className="movie_row-movie_name">{movie.name ? movie.name : movie.title}</div>
             </div>
           ))}
       </div>
