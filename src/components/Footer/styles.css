@@ -1,0 +1,10 @@
+footer {
+  text-align: center;
+  justify-content: center;
+  padding: 3rem 0;
+  background-color: #111;
+  color: #fff;
+}
+footer p {
+  line-height: 1.5rem;
+}
