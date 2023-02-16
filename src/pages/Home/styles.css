@@ -2,6 +2,15 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  overflow: overlay;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #e50914;
+  height: 30vh;
 }
 .movie_list {
   margin-top: -9rem;
