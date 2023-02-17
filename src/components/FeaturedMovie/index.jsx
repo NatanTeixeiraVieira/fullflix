@@ -37,7 +37,7 @@ export default function FeaturedMovie({ featuredMovie }) {
             </button>
           </div>
           <div className="featured_movie-genres">
-            <strong>Gêneros: </strong>
+            {genres && <strong>Gêneros: </strong>}
             {genres}
           </div>
         </div>

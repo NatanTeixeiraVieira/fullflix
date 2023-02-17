@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import Tmdb from '../../services/Tmdb';
-import Header from '../../components/Header/index';
-import FeaturedMovie from '../../components/FeaturedMovie/index';
-import MovieRow from '../../components/MovieRow/index';
-import Footer from '../../components/Footer/index';
+import Header from '../../components/Header';
+import FeaturedMovie from '../../components/FeaturedMovie';
+import MovieRow from '../../components/MovieRow';
+import Footer from '../../components/Footer';
 import './styles.css';
 
 export default function Home() {
@@ -24,6 +24,7 @@ export default function Home() {
     };
     loadAll();
   }, []);
+
   return (
     <>
       <Header />
@@ -36,6 +37,11 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      {movieList.length === 0 && (
+        <div className="loading">
+          <img src="../../src/assets/loading.gif" alt="Carregando" />
+        </div>
+      )}
     </>
   );
 }

@@ -18,3 +18,14 @@ body::-webkit-scrollbar-thumb {
   background-color: #111;
   color: #fff;
 }
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #060505;
+}
+.loading img {
+  border-radius: 10000px;
+}
