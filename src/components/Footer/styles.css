@@ -4,6 +4,7 @@ footer {
   padding: 3rem 2rem;
   background-color: #111;
   color: #fff;
+  margin-top: -3rem;
 }
 footer p {
   line-height: 1.5rem;

@@ -1,6 +1,11 @@
 .movie_row-list_area {
   overflow-x: hidden;
   padding-bottom: 2rem;
+  position: relative;
+  top: -9rem;
+}
+.movie_row-list_area:last-child {
+  padding-bottom: 0;
 }
 h2 {
   font-size: 1.5rem;
