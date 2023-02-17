@@ -10,6 +10,7 @@ import './styles.css';
 export default function Home() {
   const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -25,9 +26,24 @@ export default function Home() {
     loadAll();
   }, []);
 
+  useEffect(() => {
+    const scrollMove = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+        return;
+      }
+      setBlackHeader(false);
+    };
+    window.addEventListener('scroll', scrollMove);
+
+    return () => {
+      window.removeEventListener('scroll', scrollMove);
+    };
+  }, []);
+
   return (
     <>
-      <Header />
+      <Header scrollY={blackHeader} />
       <main>
         {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
         <section className="movie_list">

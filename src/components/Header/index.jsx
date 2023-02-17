@@ -1,18 +1,7 @@
-import { useState } from 'react';
-
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './styles.css';
 
-export default function Header() {
-  const [scrollY, setScrollY] = useState(false);
-  const scrollMove = () => {
-    if (window.scrollY > 10) {
-      setScrollY(true);
-      return;
-    }
-    setScrollY(false);
-  };
-  window.addEventListener('scroll', scrollMove);
+export default function Header({ scrollY }) {
   return (
     <header className={scrollY ? 'fillBackground' : ''}>
       <div className="site_name">
