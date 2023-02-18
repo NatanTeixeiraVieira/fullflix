@@ -25,7 +25,5 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   background-color: #060505;
   z-index: 998;
-}
-.loading img {
-  border-radius: 10000px;
+  overflow: hidden;
 }

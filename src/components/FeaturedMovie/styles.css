@@ -99,6 +99,9 @@
   .featured_movie-buttons button {
     width: 50%;
   }
+  .featured_movie-genres {
+    text-align: center;
+  }
 }
 
 @media (max-width: 465px) {
