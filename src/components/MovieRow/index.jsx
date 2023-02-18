@@ -1,7 +1,5 @@
 import { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './styles.css';
 
