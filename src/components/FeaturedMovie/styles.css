@@ -6,8 +6,6 @@
   background: linear-gradient(to top, #111, transparent);
 }
 .horizontal_gradient {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   background: linear-gradient(to right, #111 30%, transparent 70%);
   padding: 9rem 0 0 2rem;
@@ -68,4 +66,62 @@
 }
 .featured_movie-genres strong {
   font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 14px;
+  }
+  .featured_movie-name {
+    font-size: 3rem;
+  }
+  .featured_movie-description {
+    width: 100%;
+  }
+  .horizontal_gradient {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    justify-content: center;
+    padding-right: 2rem;
+    background: transparent;
+  }
+  .featured_movie-name {
+    text-align: center;
+  }
+  .featured_movie-info {
+    justify-content: center;
+  }
+  .featured_movie-description,
+  .featured_movie-genres {
+    color: #eee;
+  }
+  .featured_movie-buttons button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 465px) {
+  .featured_movie-name {
+    font-size: 2.5rem;
+  }
+  .horizontal_gradient {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    justify-content: center;
+  }
+  .featured_movie-buttons {
+    flex-direction: column;
+  }
+  .featured_movie-buttons button {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 290px) {
+  html {
+    font-size: 12px;
+  }
 }

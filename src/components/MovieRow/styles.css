@@ -1,11 +1,8 @@
 .movie_row-list_area {
   overflow-x: hidden;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
   position: relative;
   top: -9rem;
-}
-.movie_row-list_area:last-child {
-  padding-bottom: 0;
 }
 h2 {
   font-size: 1.5rem;
@@ -62,4 +59,11 @@ h2 {
 .movie_row-movie_name {
   font-size: 0.875rem;
   width: 90%;
+}
+
+@media (max-width: 1020px) {
+  .div-arrow_left,
+  .div-arrow_right {
+    opacity: 1;
+  }
 }

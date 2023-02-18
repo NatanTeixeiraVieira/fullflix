@@ -52,11 +52,13 @@ export default function Home() {
           ))}
         </section>
       </main>
-      <Footer />
-      {movieList.length === 0 && (
+
+      {movieList.length === 0 ? (
         <div className="loading">
           <img src="../../src/assets/loading.gif" alt="Carregando" />
         </div>
+      ) : (
+        <Footer />
       )}
     </>
   );
