@@ -27,3 +27,13 @@ body::-webkit-scrollbar-thumb {
   z-index: 998;
   overflow: hidden;
 }
+.loading img {
+  border-radius: 1000px;
+  animation: load 1s linear infinite;
+}
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
