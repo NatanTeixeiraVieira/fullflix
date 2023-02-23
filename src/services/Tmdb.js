@@ -52,5 +52,18 @@ export default {
       items: await request(`/discover/movie?with_genres=99&${languageAndKey}`),
     },
   ],
-  getMovieInfo: async (id) => id && request(`/tv/${id}?${languageAndKey}`),
+  getMovieInfo: async (id) => {
+    let req = await request(`/tv/${id}?${languageAndKey}`);
+    if (req.success === false) {
+      req = await request(`/movie/${id}?${languageAndKey}`);
+    }
+    return req;
+  },
+  getMovieVideos: async (id) => {
+    let req = await request(`/tv/${id}/videos?${languageAndKey}`);
+    if (req.success === false) {
+      req = await request(`/movie/${id}/videos?${languageAndKey}`);
+    }
+    return req;
+  },
 };

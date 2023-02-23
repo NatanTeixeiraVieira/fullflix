@@ -1,6 +1,14 @@
+import { useContext } from 'react';
+import { ModalContext } from '../../contexts/ModalContext';
 import './styles.css';
 
 export default function FeaturedMovie({ featuredMovie }) {
+  const { showModal } = useContext(ModalContext);
+
+  const handleShowModal = () => {
+    showModal(featuredMovie.id);
+  };
+
   const movieYear = new Date(featuredMovie.first_air_date).getFullYear();
   const genres = featuredMovie.genres.map((genre) => genre.name).join(', ');
   const seasonsNumber = featuredMovie.seasons.length;
@@ -31,7 +39,9 @@ export default function FeaturedMovie({ featuredMovie }) {
           </div>
           <div className="featured_movie-description">{description}</div>
           <div className="featured_movie-buttons">
-            <button type="button">▶ Assistir</button>
+            <button type="button" onClick={handleShowModal}>
+              ▶ Assistir
+            </button>
             <button type="button" className="featured_movie-button_my_list">
               + Minha lista
             </button>

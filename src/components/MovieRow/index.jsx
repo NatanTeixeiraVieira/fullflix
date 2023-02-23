@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { ModalContext } from '../../contexts/ModalContext';
 import './styles.css';
 
 export default function MovieRow({ item }) {
   const [scrollX, setscrollX] = useState(0);
+  const { showModal } = useContext(ModalContext);
+
+  const handleOpenModal = (movieId) => {
+    showModal(movieId);
+  };
 
   const handleArrowLeft = () => {
     let x = scrollX + Math.round(window.innerWidth / 2);
@@ -36,7 +42,7 @@ export default function MovieRow({ item }) {
         </div>
         {item.items.results.length > 0 &&
           item.items.results.map((movie, key) => (
-            <div className="movie_row-movie" key={key}>
+            <div className="movie_row-movie" key={key} onClick={() => handleOpenModal(movie.id)}>
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt="Imagem do filme"

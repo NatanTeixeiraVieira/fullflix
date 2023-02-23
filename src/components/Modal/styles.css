@@ -1,0 +1,88 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 1rem;
+  left: calc(50vw - 50vw / 2);
+  max-height: 90vh;
+  width: 50vw;
+  background-color: #000;
+  z-index: 1000;
+}
+.xIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.trailer {
+  display: flex;
+  justify-content: center;
+}
+.trailer p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.movie_info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #222;
+}
+.movie_firs_info {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+.movie_firs_info span {
+  margin-right: 0.5rem;
+}
+.movie_vote_average {
+  font-weight: 700;
+  color: #46d369;
+}
+.movie_first_air_date,
+.movie_resolution {
+  color: #dedede;
+}
+.movie_resolution {
+  font-size: 0.6rem;
+  border: 1px solid #fff;
+  padding: 1px 5px 0 5px;
+  border-radius: 5px;
+}
+.movie_description_and_second_info {
+  display: flex;
+  justify-content: space-between;
+}
+.movie_description {
+  width: 75%;
+  font-size: 0.9rem;
+  color: #eee;
+  margin-right: 2rem;
+}
+.movie_second_info {
+  font-size: 0.8rem;
+  color: #dedede;
+  /* width: 30%; */
+}
+.movie_second_info p {
+  margin-bottom: 0.5rem;
+}
+.movie_second_info strong {
+  font-weight: 700;
+}

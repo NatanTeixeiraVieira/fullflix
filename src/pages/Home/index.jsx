@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 
 import Tmdb from '../../services/Tmdb';
 import Header from '../../components/Header';
 import FeaturedMovie from '../../components/FeaturedMovie';
 import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
+import Modal from '../../components/Modal';
+import { ModalContext } from '../../contexts/ModalContext';
 import './styles.css';
 
 export default function Home() {
-  const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
+  const movieListRef = useRef([]);
+  const { modalIsOpen } = useContext(ModalContext);
 
   useEffect(() => {
     const loadAll = async () => {
       const movies = await Tmdb.getHomeList();
-      setMovieList(movies);
+      movieListRef.current = movies;
 
       const getOriginalsMovies = movies.find((listMovies) => listMovies.slug === 'originals');
       const randomNumber = Math.floor(Math.random() * getOriginalsMovies.items.results.length - 1);
@@ -47,19 +50,20 @@ export default function Home() {
       <main>
         {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
         <section className="movie_list">
-          {movieList.map((item, key) => (
+          {movieListRef.current.map((item, key) => (
             <MovieRow item={item} key={key} />
           ))}
         </section>
       </main>
 
-      {movieList.length === 0 ? (
+      {movieListRef.current.length === 0 ? (
         <div className="loading">
           <img src="../../src/assets/loading-image.png" alt="Carregando" />
         </div>
       ) : (
         <Footer />
       )}
+      {modalIsOpen && <Modal />}
     </>
   );
 }
