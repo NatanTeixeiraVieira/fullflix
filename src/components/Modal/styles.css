@@ -80,7 +80,6 @@
 .movie_second_info {
   font-size: 0.8rem;
   color: #dedede;
-  /* width: 30%; */
 }
 .movie_second_info p {
   margin-bottom: 0.5rem;
@@ -93,6 +92,8 @@
   .modal {
     width: 80vw;
     left: calc(50vw - 80vw / 2);
+    max-height: 100vw;
+    margin-bottom: 1rem;
   }
 }
 
@@ -101,13 +102,23 @@
     width: calc(100vw - 2rem);
     left: 1rem;
   }
+  .movie_description_and_second_info {
+    flex-direction: column;
+  }
+  .movie_description {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 }
 
 @media (max-width: 465px) {
   .modal {
-    width: 100vw;
+    width: calc(100vw - 1rem);
     max-height: 100vh;
-    left: 0;
-    top: 0;
+    left: 0.5rem;
+    top: 0.5rem;
+  }
+  .movie_second_info p {
+    line-height: 0.75rem;
   }
 }

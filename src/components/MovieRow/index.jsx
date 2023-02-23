@@ -41,8 +41,12 @@ export default function MovieRow({ item }) {
           <KeyboardArrowRightIcon style={{ fontSize: 50 }} />
         </div>
         {item.items.results.length > 0 &&
-          item.items.results.map((movie, key) => (
-            <div className="movie_row-movie" key={key} onClick={() => handleOpenModal(movie.id)}>
+          item.items.results.map((movie) => (
+            <div
+              className="movie_row-movie"
+              key={movie.id}
+              onClick={() => handleOpenModal(movie.id)}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt="Imagem do filme"

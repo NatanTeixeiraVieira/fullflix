@@ -50,8 +50,8 @@ export default function Home() {
       <main>
         {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
         <section className="movie_list">
-          {movieListRef.current.map((item, key) => (
-            <MovieRow item={item} key={key} />
+          {movieListRef.current.map((item) => (
+            <MovieRow item={item} key={item.slug} />
           ))}
         </section>
       </main>
