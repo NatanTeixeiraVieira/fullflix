@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import CloseIcon from '@mui/icons-material/Close';
 import { ModalContext } from '../../contexts/ModalContext';
@@ -7,11 +7,24 @@ import './styles.css';
 export default function Modal() {
   const { trailerUrl, movieInfo, closeModal } = useContext(ModalContext);
   const genres = movieInfo.genres.map((genre) => genre.name).join(', ');
-  const videoHeight = movieInfo.overview.length < 500 ? '28vw' : '25vw';
+  const [videoHeight, setVideoHeight] = useState(movieInfo.overview.length < 900 ? '28vw' : '24vw');
 
   const handleCloseModal = () => {
     closeModal();
   };
+
+  const handleVideoHeigth = () => {
+    const widthScreen = window.innerWidth;
+    if (widthScreen <= 1020 && widthScreen > 760) {
+      setVideoHeight('45vw');
+    } else if (widthScreen <= 760) {
+      setVideoHeight('54vw');
+    }
+  };
+
+  useEffect(() => {
+    handleVideoHeigth();
+  }, []);
 
   return (
     <div className="modal">
@@ -27,6 +40,7 @@ export default function Modal() {
             width="100%"
             height={videoHeight}
             style={{ maxWidth: '100vw' }}
+            controls
           />
         ) : (
           <p style={{ height: videoHeight }}>Desculpe, este conteúdo não está disponível</p>

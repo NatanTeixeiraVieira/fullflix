@@ -37,3 +37,15 @@ body::-webkit-scrollbar-thumb {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 760px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 295px) {
+  html {
+    font-size: 12px;
+  }
+}

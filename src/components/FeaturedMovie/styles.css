@@ -69,9 +69,6 @@
 }
 
 @media (max-width: 760px) {
-  html {
-    font-size: 14px;
-  }
   .featured_movie-name {
     font-size: 3rem;
   }
@@ -120,11 +117,5 @@
   .featured_movie-buttons button {
     margin: 0.5rem 0;
     width: 100%;
-  }
-}
-
-@media (max-width: 290px) {
-  html {
-    font-size: 12px;
   }
 }
