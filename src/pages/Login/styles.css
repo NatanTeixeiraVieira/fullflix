@@ -49,13 +49,12 @@
   font-size: 0.9rem;
   color: #888;
 }
-.signup button {
-  background-color: transparent;
+.signup a {
   color: #fff;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  margin-left: 5px;
 }
-.signup button:hover {
+.signup a:hover {
   color: #e50914;
   text-decoration: underline;
 }

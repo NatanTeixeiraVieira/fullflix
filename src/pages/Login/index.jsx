@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 export default function Login() {
@@ -12,7 +13,7 @@ export default function Login() {
         </div>
         <div className="signup">
           É novo no Fullflix?
-          <button type="button">Cadastre-se agora</button>
+          <Link to="/signup">Cadastre-se agora</Link>
         </div>
       </form>
     </div>
