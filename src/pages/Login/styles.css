@@ -1,0 +1,61 @@
+.login {
+  background-image: url('../../assets/login-background-image.jpg');
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_form {
+  width: 30vw;
+  padding: 2rem 3rem;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.login_form h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.login_inputs_and_button {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+.login_inputs_and_button input:first-child {
+  margin-bottom: 1rem;
+}
+.login_inputs_and_button input {
+  background-color: #292929;
+}
+.login_inputs_and_button input,
+.login_inputs_and_button button {
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.login_inputs_and_button input::placeholder {
+  color: #aaa;
+}
+.login_inputs_and_button button {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  background-color: #e50914;
+  cursor: pointer;
+}
+.signup {
+  font-size: 0.9rem;
+  color: #888;
+}
+.signup button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.signup button:hover {
+  color: #e50914;
+  text-decoration: underline;
+}

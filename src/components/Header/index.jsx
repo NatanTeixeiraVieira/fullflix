@@ -1,7 +1,7 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './styles.css';
 
-export default function Header({ scrollY }) {
+export default function Header({ scrollY, display = 'block' }) {
   return (
     <header className={scrollY ? 'fillBackground' : ''}>
       <div className="site_name">
@@ -14,6 +14,7 @@ export default function Header({ scrollY }) {
           backgroundColor: '#141414',
           borderRadius: 100,
           cursor: 'pointer',
+          display: `${display}`,
         }}
       />
     </header>
