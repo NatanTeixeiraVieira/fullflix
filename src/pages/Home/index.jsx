@@ -6,7 +6,7 @@ import FeaturedMovie from '../../components/FeaturedMovie';
 import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
-import { ModalContext } from '../../contexts/ModalContext';
+import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
 
 export default function Home() {

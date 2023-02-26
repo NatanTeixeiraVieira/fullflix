@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react';
-import Tmdb from '../services/Tmdb';
-import reducer from '../reducers/modalReducer';
+import Tmdb from '../../services/Tmdb';
+import reducer from './modalReducer';
 
 const initialValue = {
   modalIsOpen: false,

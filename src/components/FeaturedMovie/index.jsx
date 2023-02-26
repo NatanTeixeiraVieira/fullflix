@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ModalContext } from '../../contexts/ModalContext';
+import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
 
 export default function FeaturedMovie({ featuredMovie }) {

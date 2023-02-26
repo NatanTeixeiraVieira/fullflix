@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { ModalContext } from '../../contexts/ModalContext';
+import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
 
 export default function MovieRow({ item }) {

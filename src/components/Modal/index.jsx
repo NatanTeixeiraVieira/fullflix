@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import CloseIcon from '@mui/icons-material/Close';
-import { ModalContext } from '../../contexts/ModalContext';
+import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
 
 export default function Modal() {
