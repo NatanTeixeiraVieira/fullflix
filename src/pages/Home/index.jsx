@@ -11,7 +11,6 @@ import './styles.css';
 
 export default function Home() {
   const [featuredMovie, setFeaturedMovie] = useState(null);
-  const [blackHeader, setBlackHeader] = useState(false);
   const movieListRef = useRef([]);
   const { modalIsOpen } = useContext(ModalContext);
 
@@ -20,8 +19,12 @@ export default function Home() {
       const movies = await Tmdb.getHomeList();
       movieListRef.current = movies;
 
-      const getOriginalsMovies = movies.find((listMovies) => listMovies.slug === 'originals');
-      const randomNumber = Math.floor(Math.random() * getOriginalsMovies.items.results.length - 1);
+      const getOriginalsMovies = movies.find(
+        (listMovies) => listMovies.slug === 'originals'
+      );
+      const randomNumber = Math.floor(
+        Math.random() * getOriginalsMovies.items.results.length - 1
+      );
       const chosenMovie = getOriginalsMovies.items.results[randomNumber];
       const chosenMovieInfo = await Tmdb.getMovieInfo(chosenMovie.id);
       setFeaturedMovie(chosenMovieInfo);
@@ -29,24 +32,9 @@ export default function Home() {
     loadAll();
   }, []);
 
-  useEffect(() => {
-    const scrollMove = () => {
-      if (window.scrollY > 10) {
-        setBlackHeader(true);
-        return;
-      }
-      setBlackHeader(false);
-    };
-    window.addEventListener('scroll', scrollMove);
-
-    return () => {
-      window.removeEventListener('scroll', scrollMove);
-    };
-  }, []);
-
   return (
     <>
-      <Header scrollY={blackHeader} />
+      <Header />
       <main>
         {featuredMovie && <FeaturedMovie featuredMovie={featuredMovie} />}
         <section className="movie_list">
