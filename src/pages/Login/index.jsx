@@ -12,7 +12,7 @@ export default function Login() {
           <button type="submit">Entrar</button>
         </div>
         <div className="signup">
-          É novo no Fullflix?
+          <span>É novo no Fullflix?</span>
           <Link to="/signup">Cadastre-se agora</Link>
         </div>
       </form>
