@@ -1,12 +1,11 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderContext } from '../../contexts/Header/HeaderContext';
 import './styles.css';
 
 export default function Header() {
-  const { hidden } = useContext(HeaderContext);
   const [blackHeader, setBlackHeader] = useState(false);
+  const [hideHeaderPart, setHideHeaderPart] = useState(false);
 
   useEffect(() => {
     const scrollMove = () => {
@@ -23,12 +22,23 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const page = window.location.pathname;
+    if (page.includes('/login') || page.includes('/signup')) {
+      setHideHeaderPart(true);
+    }
+
+    return () => {
+      setHideHeaderPart(false);
+    };
+  }, []);
+
   return (
-    <header className={blackHeader && 'fillBackground'}>
+    <header className={blackHeader ? 'fillBackground' : ''}>
       <div className="site_name">
         <Link to="/">Fullflix</Link>
       </div>
-      <div className={`content_not_in_login ${hidden && 'hidden'}`}>
+      <div className={`content_not_in_login ${hideHeaderPart ? 'hidden' : ''}`}>
         <AccountCircleIcon
           style={{
             fontSize: '3rem',

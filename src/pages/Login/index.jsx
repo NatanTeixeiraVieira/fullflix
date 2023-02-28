@@ -1,15 +1,7 @@
-import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderContext } from '../../contexts/Header/HeaderContext';
 import './styles.css';
 
 export default function Login() {
-  const { hideHeaderPart } = useContext(HeaderContext);
-
-  useEffect(() => {
-    hideHeaderPart();
-  }, [hideHeaderPart]);
-
   return (
     <div className="login">
       <form className="login_form">
