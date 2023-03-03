@@ -7,6 +7,7 @@ export default function ThemeSignup({ children }) {
   const { currentStep } = useContext(SignupContext);
   return (
     <div className="theme_signup">
+      <hr className="header_underline" />
       <section className="signup_steps">
         <SignupItem
           title="Planos"

@@ -41,3 +41,19 @@
   margin: 0 -0.4rem 0 2rem;
   background-color: #111;
 }
+
+@media (max-width: 760px) {
+  .signup_item_steps .title,
+  .signup_item_steps .description {
+    text-align: start;
+  }
+  .signup_item_steps .icon_area {
+    order: -5;
+    margin-right: 0.5rem;
+  }
+  .signup_item_steps .point {
+    display: block;
+    order: -10;
+    margin: 0 1rem 0 0;
+  }
+}

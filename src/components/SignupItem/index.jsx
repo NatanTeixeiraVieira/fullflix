@@ -31,9 +31,7 @@ export default function SignupItem({ title, description, icon, path, active }) {
               ? { backgroundColor: '#e50914' }
               : { backgroundColor: '#111' }
           }
-        >
-          .
-        </div>
+        />
       </Link>
     </div>
   );

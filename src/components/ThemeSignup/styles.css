@@ -6,17 +6,40 @@
   padding-top: 4.375rem;
 }
 
+.header_underline {
+  position: absolute;
+  width: 100%;
+  opacity: 0.1;
+  margin: 0;
+}
+
 .theme_signup .signup_steps {
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
+  padding: calc(25vh - 4.375rem) 0 0 1rem;
   gap: 2rem;
   width: 30%;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .theme_signup .page {
   flex: 1;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 760px) {
+  .theme_signup {
+    flex-direction: column;
+  }
+  .theme_signup .signup_steps {
+    width: 100%;
+    gap: 1rem;
+    padding: 2rem 2rem 3rem 2rem;
+    border: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .theme_signup .signup_steps {
+    padding-left: 1rem;
+  }
 }

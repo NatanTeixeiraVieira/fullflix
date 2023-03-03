@@ -29,14 +29,13 @@
   flex-direction: column;
   align-items: center;
   width: 20%;
-  height: 8rem;
   padding: 0;
 }
-.identifier {
+.plans .identifier {
   position: absolute;
   width: calc(0.2 * (100% - 35%));
   height: 400px;
-  z-index: 500;
+  z-index: 1000;
   margin: 0;
   opacity: 0;
 }
@@ -49,7 +48,7 @@
 }
 .plans_name svg {
   display: flex;
-  margin-top: -1.01rem;
+  margin-top: -1.1rem;
   font-size: 4rem;
   color: #e50914;
   height: 2.5rem;
@@ -58,6 +57,7 @@
   box-sizing: border-box;
   width: 100%;
   border-collapse: collapse;
+  margin-top: -1rem;
 }
 .table_plans tr {
   display: flex;
@@ -70,7 +70,7 @@
 .table_plans td {
   padding: 1rem;
 }
-.table-description {
+.table_plans .table-description {
   width: 40%;
 }
 .table-basic,
@@ -95,4 +95,62 @@
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .plans_name {
+    justify-content: center;
+  }
+  .plan_basic,
+  .plan_standard,
+  .plan_premium {
+    flex: 1;
+  }
+  .plans .identifier {
+    width: calc(0.3 * (100% - 35%));
+    height: 600px;
+  }
+  .plans_name span {
+    padding: 2rem 0;
+    width: 93%;
+  }
+  .table_plans tr {
+    padding-top: 3rem;
+  }
+  .table_plans .table-description {
+    text-align: center;
+    width: 60%;
+    position: absolute;
+    margin-bottom: 6rem;
+  }
+  .table-basic,
+  .table-standard,
+  .table-premium {
+    flex: 1;
+  }
+  .plans .button-next_page {
+    width: 90%;
+  }
+}
+
+@media (max-width: 760px) {
+  .plans {
+    padding: 0 2rem;
+  }
+  .plans .identifier {
+    width: 30%;
+    height: 520px;
+  }
+  .table_plans .table-description {
+    width: 90%;
+  }
+}
+
+@media (max-width: 550px) {
+  .plans {
+    padding: 0 1rem;
+  }
+  .plans .button-next_page {
+    width: 100%;
+  }
 }
