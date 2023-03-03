@@ -1,7 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from '../App';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import Confirmation from '../pages/Signup/Confirmation';
+import Plans from '../pages/Signup/Plans';
+import Register from '../pages/Signup/Register';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +18,22 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/signup',
+        element: <Navigate to="/signup/plans" />,
+      },
+      {
+        path: '/signup/plans',
+        element: <Plans />,
+      },
+      {
+        path: '/signup/register',
+        element: <Register />,
+      },
+      {
+        path: '/signup/confirmation',
+        element: <Confirmation />,
       },
     ],
   },

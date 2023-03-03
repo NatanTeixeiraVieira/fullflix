@@ -1,0 +1,34 @@
+.confirmation {
+  height: calc(100vh - 4.45rem);
+  padding: 3rem;
+}
+.confirmation_title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem 0;
+}
+.confirmation .user_info li {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  list-style: none;
+}
+.confirmation .user_info li strong {
+  font-weight: 700;
+}
+.confirmation .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.confirmation .button_back,
+.confirmation .subscribe {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 35%;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background-color: #e50914;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

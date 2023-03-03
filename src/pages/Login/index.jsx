@@ -13,7 +13,7 @@ export default function Login() {
         </div>
         <div className="signup">
           <span>É novo no Fullflix?</span>
-          <Link to="/signup">Cadastre-se agora</Link>
+          <Link to="/signup/plans">Cadastre-se agora</Link>
         </div>
       </form>
     </div>

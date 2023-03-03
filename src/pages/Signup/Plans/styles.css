@@ -1,0 +1,98 @@
+.plans {
+  padding: 1rem 3rem 5rem 3rem;
+}
+.plans_title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem 0;
+}
+.benefits {
+  margin-bottom: 1rem;
+}
+.benefits li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.benefits li svg {
+  color: #e50914;
+}
+.plans_name {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.plan_basic,
+.plan_standard,
+.plan_premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 8rem;
+  padding: 0;
+}
+.identifier {
+  position: absolute;
+  width: calc(0.2 * (100% - 35%));
+  height: 400px;
+  z-index: 500;
+  margin: 0;
+  opacity: 0;
+}
+.plans_name span {
+  width: 65%;
+  padding: 3rem 0;
+  font-weight: 700;
+  background-color: #e50914;
+  cursor: default;
+}
+.plans_name svg {
+  display: flex;
+  margin-top: -1.01rem;
+  font-size: 4rem;
+  color: #e50914;
+  height: 2.5rem;
+}
+.table_plans {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+}
+.table_plans tr {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+}
+.table_plans tr:last-child {
+  border: none;
+}
+.table_plans td {
+  padding: 1rem;
+}
+.table-description {
+  width: 40%;
+}
+.table-basic,
+.table-standard,
+.table-premium {
+  font-weight: 700;
+  width: 20%;
+  text-align: center;
+  cursor: default;
+}
+.plans .buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.plans .button-next_page {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 35%;
+  padding: 1rem 0;
+  background-color: #e50914;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

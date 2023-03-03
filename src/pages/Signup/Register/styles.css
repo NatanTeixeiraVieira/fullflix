@@ -1,0 +1,53 @@
+.register {
+  height: calc(100vh - 4.45rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-content {
+  width: 50%;
+}
+.register_title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+.register-form input {
+  background-color: #292929;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: none;
+}
+.register-form input::placeholder {
+  color: #aaa;
+}
+.input_email,
+.input_password,
+.input_user_name,
+.button_back,
+.button_subscribe {
+  font-size: 1rem;
+  padding: 1rem;
+  color: #fff;
+}
+.register .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.register .button_back,
+.register .button_next_page {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 49%;
+  padding: 1rem 0;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: #fff;
+  cursor: pointer;
+}
