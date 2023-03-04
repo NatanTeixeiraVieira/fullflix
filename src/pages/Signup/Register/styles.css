@@ -5,7 +5,7 @@
   justify-content: center;
 }
 .register-content {
-  width: 50%;
+  width: 60%;
 }
 .register_title {
   font-size: 2rem;
@@ -50,4 +50,36 @@
   background-color: #e50914;
   color: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .register {
+    padding: 3rem 3rem 8rem;
+    align-items: start;
+  }
+  .register-content {
+    height: fit-content;
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .register {
+    padding: 0 2rem 4rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .register {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .register .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .register .button_back,
+  .register .button_next_page {
+    width: 100%;
+  }
 }

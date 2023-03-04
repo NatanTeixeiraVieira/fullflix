@@ -135,7 +135,7 @@
 
 @media (max-width: 760px) {
   .plans {
-    padding: 0 2rem;
+    padding: 0 2rem 4rem;
   }
   .plans .identifier {
     width: 30%;
@@ -148,7 +148,7 @@
 
 @media (max-width: 550px) {
   .plans {
-    padding: 0 1rem;
+    padding: 0 1rem 4rem;
   }
   .plans .button-next_page {
     width: 100%;

@@ -19,16 +19,45 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 .confirmation .button_back,
 .confirmation .subscribe {
   font-size: 1rem;
   font-weight: 700;
   width: 35%;
-  margin-top: 2rem;
   padding: 1rem 0;
   background-color: #e50914;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .confirmation .button_back,
+  .confirmation .subscribe {
+    flex: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .confirmation {
+    padding-top: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .confirmation {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .confirmation .buttons {
+    flex-direction: column;
+  }
+  .confirmation .button_back,
+  .confirmation .subscribe {
+    width: 100%;
+  }
 }

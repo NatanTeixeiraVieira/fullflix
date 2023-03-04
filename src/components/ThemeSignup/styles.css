@@ -33,7 +33,7 @@
   .theme_signup .signup_steps {
     width: 100%;
     gap: 1rem;
-    padding: 2rem 2rem 3rem 2rem;
+    padding: 2rem 2rem 5rem 2rem;
     border: none;
   }
 }
@@ -41,5 +41,6 @@
 @media (max-width: 550px) {
   .theme_signup .signup_steps {
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
