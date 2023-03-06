@@ -5,7 +5,7 @@ import { SignupContext } from '../../../contexts/Signup/SignupContext';
 import './styles.css';
 
 export default function Confirmation() {
-  const { name, email, password, plan, changeCurrentStep } =
+  const { name, email, password, plan, changeCurrentStep, subscribe } =
     useContext(SignupContext);
   const navigate = useNavigate();
 
@@ -17,6 +17,11 @@ export default function Confirmation() {
   const handleBackStep = () => {
     navigate('/signup/register');
   };
+  const handleSubscribe = () => {
+    subscribe();
+    navigate('/');
+  };
+
   return (
     <ThemeSignup>
       <div className="confirmation">
@@ -48,7 +53,11 @@ export default function Confirmation() {
             >
               Voltar
             </button>
-            <button type="submit" className="subscribe">
+            <button
+              type="submit"
+              className="subscribe"
+              onClick={handleSubscribe}
+            >
               Assinar
             </button>
           </div>

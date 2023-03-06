@@ -35,6 +35,19 @@ export function SignupContextProvider({ children }) {
   const changeRegisterIsValid = () => {
     dispatch({ type: setRegisterIsValid });
   };
+  const subscribe = () => {
+    const id = Date.now();
+    const userDatas = {
+      datas: {
+        name: state.name,
+        email: state.email,
+        password: state.password,
+        plan: state.plan,
+      },
+      isLogged: true,
+    };
+    localStorage.setItem(`user ${id.toString()}`, JSON.stringify(userDatas));
+  };
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
@@ -43,6 +56,7 @@ export function SignupContextProvider({ children }) {
     changeCurrentStep,
     changeAllInputValuesOnRegister,
     changeRegisterIsValid,
+    subscribe,
   };
 
   return (
