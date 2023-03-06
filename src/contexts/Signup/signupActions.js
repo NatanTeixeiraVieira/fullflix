@@ -1,9 +1,8 @@
 const SignupActions = {
   setCurrentStep: 'setCurrentStep',
-  setName: 'setName',
-  setEmail: 'setEmail',
-  setPassword: 'setPassword',
+  setAllInputValuesOnRegister: 'setAllInputValuesOnRegister',
   setPlan: 'setPlan',
+  setRegisterIsValid: 'setRegisterIsValid',
 };
 
 export default SignupActions;

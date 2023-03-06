@@ -21,6 +21,7 @@
   border-radius: 5px;
   margin-top: 1rem;
   border: none;
+  outline: none;
 }
 .register-form input::placeholder {
   color: #aaa;

@@ -4,7 +4,14 @@ import SignupItem from '../SignupItem';
 import './styles.css';
 
 export default function ThemeSignup({ children }) {
-  const { currentStep } = useContext(SignupContext);
+  const { currentStep, registerIsValid } = useContext(SignupContext);
+
+  const handleRegisterIsValid = () => {
+    if (!registerIsValid) {
+      alert('Para acessar este passo é necessário preencher o cadastro.');
+    }
+  };
+
   return (
     <div className="theme_signup">
       <hr className="header_underline" />
@@ -27,8 +34,9 @@ export default function ThemeSignup({ children }) {
           title="Confirmação"
           description="Confirme as informações de cadastro"
           icon="confirmation"
-          path="/signup/confirmation"
+          path={registerIsValid && '/signup/confirmation'}
           active={currentStep === 3}
+          onclick={handleRegisterIsValid}
         />
       </section>
       <section className="page">{children}</section>

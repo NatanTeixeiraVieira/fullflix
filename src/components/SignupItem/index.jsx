@@ -4,10 +4,17 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CheckIcon from '@mui/icons-material/Check';
 import './styles.css';
 
-export default function SignupItem({ title, description, icon, path, active }) {
+export default function SignupItem({
+  title,
+  description,
+  icon,
+  path,
+  active,
+  onclick,
+}) {
   return (
     <div className="signup_item_steps">
-      <Link to={path}>
+      <Link to={path} onClick={onclick}>
         <div className="title_and_description">
           <div className="title">{title}</div>
           <div className="description">{description}</div>

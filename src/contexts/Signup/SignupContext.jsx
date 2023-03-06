@@ -8,6 +8,7 @@ const initialState = {
   email: '',
   password: '',
   plan: 'premium',
+  registerIsValid: false,
 };
 
 export const SignupContext = createContext();
@@ -15,8 +16,12 @@ export const SignupContext = createContext();
 export function SignupContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { setCurrentStep, setName, setEmail, setPassword, setPlan } =
-    SignupActions;
+  const {
+    setCurrentStep,
+    setAllInputValuesOnRegister,
+    setPlan,
+    setRegisterIsValid,
+  } = SignupActions;
 
   const changePlan = (plan) => {
     dispatch({ type: setPlan, payload: plan });
@@ -24,14 +29,11 @@ export function SignupContextProvider({ children }) {
   const changeCurrentStep = (step) => {
     dispatch({ type: setCurrentStep, payload: step });
   };
-  const changeName = (name) => {
-    dispatch({ type: setName, payload: name });
+  const changeAllInputValuesOnRegister = (datas) => {
+    dispatch({ type: setAllInputValuesOnRegister, payload: datas });
   };
-  const changeEmail = (email) => {
-    dispatch({ type: setEmail, payload: email });
-  };
-  const changePassword = (password) => {
-    dispatch({ type: setPassword, payload: password });
+  const changeRegisterIsValid = () => {
+    dispatch({ type: setRegisterIsValid });
   };
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
@@ -39,9 +41,8 @@ export function SignupContextProvider({ children }) {
     ...state,
     changePlan,
     changeCurrentStep,
-    changeName,
-    changeEmail,
-    changePassword,
+    changeAllInputValuesOnRegister,
+    changeRegisterIsValid,
   };
 
   return (
