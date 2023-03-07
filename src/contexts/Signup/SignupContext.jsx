@@ -38,15 +38,14 @@ export function SignupContextProvider({ children }) {
   const subscribe = () => {
     const id = Date.now();
     const userDatas = {
-      datas: {
-        name: state.name,
-        email: state.email,
-        password: state.password,
-        plan: state.plan,
-      },
-      isLogged: true,
+      id,
+      name: state.name,
+      email: state.email,
+      password: state.password,
+      plan: state.plan,
     };
-    localStorage.setItem(`user ${id.toString()}`, JSON.stringify(userDatas));
+    localStorage.setItem(state.email, JSON.stringify(userDatas));
+    localStorage.setItem('isLogged', state.email);
   };
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values

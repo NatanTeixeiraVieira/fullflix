@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from '../App';
 import Home from '../pages/Home';
+import RequireAuth from '../contexts/Auth/RequireAuth';
 import Login from '../pages/Login';
 import Confirmation from '../pages/Signup/Confirmation';
 import Plans from '../pages/Signup/Plans';
@@ -13,7 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: (
+          <RequireAuth>
+            <Home />
+          </RequireAuth>
+        ),
       },
       {
         path: '/login',
