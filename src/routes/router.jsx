@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import Confirmation from '../pages/Signup/Confirmation';
 import Plans from '../pages/Signup/Plans';
 import Register from '../pages/Signup/Register';
+import Account from '../pages/Account';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <Home />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: '/account',
+        element: (
+          <RequireAuth>
+            <Account />
           </RequireAuth>
         ),
       },

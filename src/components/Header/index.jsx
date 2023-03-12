@@ -39,15 +39,17 @@ export default function Header() {
         <Link to="/">Fullflix</Link>
       </div>
       <div className={`content_not_in_login ${hideHeaderPart ? 'hidden' : ''}`}>
-        <AccountCircleIcon
-          style={{
-            fontSize: '3rem',
-            color: '#fff',
-            backgroundColor: '#141414',
-            borderRadius: 100,
-            cursor: 'pointer',
-          }}
-        />
+        <Link to="/account">
+          <AccountCircleIcon
+            style={{
+              fontSize: '3rem',
+              color: '#fff',
+              backgroundColor: '#141414',
+              borderRadius: 100,
+              cursor: 'pointer',
+            }}
+          />
+        </Link>
       </div>
     </header>
   );

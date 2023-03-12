@@ -1,0 +1,109 @@
+.account {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  height: 100vh;
+  padding-top: 5rem;
+}
+.account .content {
+  width: 70vw;
+}
+.account .title_and_subscription_date,
+.account .personal_and_account_info,
+.account .plan_details,
+.account .settings {
+  display: flex;
+}
+.account .title_and_subscription_date {
+  align-items: center;
+  gap: 3rem;
+}
+.account .title_and_subscription_date h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ddd;
+}
+.account .title_and_subscription_date span {
+  color: #888;
+  font-size: 0.9rem;
+}
+.account .personal_and_account_info {
+  display: flex;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #ddd;
+  margin-top: 1rem;
+}
+.account .personal_and_account_info,
+.account .plan_details,
+.account .settings {
+  gap: 3rem;
+  padding: 1rem 0;
+}
+.account .title_and_button_cancel_plan h2 {
+  margin-bottom: 0.5rem;
+}
+.account .title_and_button_cancel_plan button {
+  font-size: 1rem;
+  width: 75%;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.account .title_and_button_cancel_plan,
+.account .plan_details h2,
+.account .settings h2 {
+  width: 23%;
+}
+.account h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ddd;
+}
+.account .person_and_account {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.account .personal_info {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.account .email,
+.account .change_email {
+  margin-bottom: 0.5rem;
+}
+.account .email_and_password_info {
+  color: #ddd;
+}
+.account .email_and_password_info span {
+  color: #fff;
+}
+.account .options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.2rem;
+}
+.account .button_action {
+  font-size: 0.9rem;
+  color: rgb(34, 122, 255);
+  text-align: end;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.account .plan_details {
+  gap: 3rem;
+  border-bottom: 2px solid #fff;
+}
+.account .plan_and_change_plan {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  color: #ddd;
+}
