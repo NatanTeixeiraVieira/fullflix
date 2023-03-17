@@ -29,6 +29,33 @@ header {
 .fillBackground {
   background-color: #141414;
 }
+.search_area {
+  display: flex;
+}
+.search_area svg {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.content_not_in_login a {
+  display: flex;
+}
+.search_area {
+  display: flex;
+  align-items: center;
+}
+.search_input {
+  font-size: 1rem;
+  margin-right: 1.5rem;
+  padding: 0.5rem;
+  background-color: #eee;
+  border: 1px solid #141414;
+  outline: none;
+  border-radius: 5px;
+}
+.search_input::placeholder {
+  color: #444;
+}
 .site_name a {
   color: #e50914;
   font-weight: 700;

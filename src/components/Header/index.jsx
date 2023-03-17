@@ -1,6 +1,7 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
 import './styles.css';
 
 export default function Header() {
@@ -39,6 +40,10 @@ export default function Header() {
         <Link to="/">Fullflix</Link>
       </div>
       <div className={`content_not_in_login ${hideHeaderPart ? 'hidden' : ''}`}>
+        <div className="search_area">
+          <SearchIcon />
+          <input type="text" className="search_input" placeholder="Pesquisar" />
+        </div>
         <Link to="/account">
           <AccountCircleIcon
             style={{
