@@ -41,26 +41,6 @@ h2 {
 .div-arrow_right {
   right: 0;
 }
-.movie_row-movie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-  transform: scale(0.9);
-  transition: all ease 0.2s;
-}
-.movie_row img {
-  height: 14rem;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-}
-.movie_row-movie:hover {
-  transform: scale(1);
-}
-.movie_row-movie_name {
-  font-size: 0.875rem;
-  width: 90%;
-}
 
 @media (max-width: 1020px) {
   .div-arrow_left,

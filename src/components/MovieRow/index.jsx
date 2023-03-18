@@ -1,16 +1,11 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
+import Movie from '../Movie';
 
-export default function MovieRow({ item }) {
+export default function MovieRow({ item, key }) {
   const [scrollX, setscrollX] = useState(0);
-  const { showModal } = useContext(ModalContext);
-
-  const handleOpenModal = (movieId) => {
-    showModal(movieId);
-  };
 
   const handleArrowLeft = () => {
     let x = scrollX + Math.round(window.innerWidth / 2);
@@ -28,7 +23,7 @@ export default function MovieRow({ item }) {
     setscrollX(x);
   };
   return (
-    <div className="movie_row-list_area">
+    <div className="movie_row-list_area" key={key}>
       <h2>{item.title}</h2>
       <div
         className="movie_row"
@@ -42,17 +37,7 @@ export default function MovieRow({ item }) {
         </div>
         {item.items.results.length > 0 &&
           item.items.results.map((movie) => (
-            <div
-              className="movie_row-movie"
-              key={movie.id}
-              onClick={() => handleOpenModal(movie.id)}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                alt="Imagem do filme"
-              />
-              <div className="movie_row-movie_name">{movie.name ? movie.name : movie.title}</div>
-            </div>
+            <Movie movie={movie} key={movie.id} />
           ))}
       </div>
     </div>

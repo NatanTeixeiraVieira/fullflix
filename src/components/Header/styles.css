@@ -32,6 +32,9 @@ header {
 .search_area {
   display: flex;
 }
+.search_button {
+  display: flex;
+}
 .search_area svg {
   font-size: 2rem;
   color: #fff;

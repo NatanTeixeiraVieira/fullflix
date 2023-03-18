@@ -7,6 +7,7 @@ import Confirmation from '../pages/Signup/Confirmation';
 import Plans from '../pages/Signup/Plans';
 import Register from '../pages/Signup/Register';
 import Account from '../pages/Account';
+import Search from '../pages/Search';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <Account />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: '/search',
+        element: (
+          <RequireAuth>
+            <Search />
           </RequireAuth>
         ),
       },

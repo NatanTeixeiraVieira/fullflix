@@ -17,6 +17,10 @@ body::-webkit-scrollbar-thumb {
   background-color: #111;
   color: #fff;
 }
+.movie_list.search {
+  display: flex;
+  flex-wrap: wrap;
+}
 .loading {
   display: flex;
   justify-content: center;

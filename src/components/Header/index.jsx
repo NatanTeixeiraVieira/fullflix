@@ -1,12 +1,16 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import './styles.css';
+import { SearchContext } from '../../contexts/Search/SearchContext';
 
 export default function Header() {
+  const { research } = useContext(SearchContext);
   const [blackHeader, setBlackHeader] = useState(false);
   const [hideHeaderPart, setHideHeaderPart] = useState(false);
+  const searchInputRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const scrollMove = () => {
@@ -34,6 +38,11 @@ export default function Header() {
     };
   }, []);
 
+  const handleSearch = () => {
+    research(searchInputRef.current.value);
+    navigate('/search');
+  };
+
   return (
     <header className={blackHeader ? 'fillBackground' : ''}>
       <div className="site_name">
@@ -41,8 +50,15 @@ export default function Header() {
       </div>
       <div className={`content_not_in_login ${hideHeaderPart ? 'hidden' : ''}`}>
         <div className="search_area">
-          <SearchIcon />
-          <input type="text" className="search_input" placeholder="Pesquisar" />
+          <div className="search_button" onClick={handleSearch}>
+            <SearchIcon />
+          </div>
+          <input
+            type="text"
+            className="search_input"
+            placeholder="Pesquisar"
+            ref={searchInputRef}
+          />
         </div>
         <Link to="/account">
           <AccountCircleIcon

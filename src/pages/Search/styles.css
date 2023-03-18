@@ -1,0 +1,10 @@
+.search {
+  background-color: #141414;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+.search .movies {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
