@@ -19,3 +19,9 @@
   font-size: 0.875rem;
   width: 90%;
 }
+
+@media (max-width: 760px) {
+  .movie {
+    margin-left: -1rem;
+  }
+}

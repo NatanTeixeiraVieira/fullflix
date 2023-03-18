@@ -13,11 +13,13 @@ export default function Search() {
   const { modalIsOpen } = useContext(ModalContext);
 
   useEffect(() => {
+    setMoviesSearch([]);
     movieListRef.current.forEach((item) => {
       item.items.results.forEach((movie) => {
         if (
-          movie?.name?.toLowerCase() === search?.toLowerCase() ||
-          movie?.title?.toLowerCase() === search?.toLowerCase()
+          (movie?.name?.toLowerCase() === search?.toLowerCase() ||
+            movie?.title?.toLowerCase() === search?.toLowerCase()) &&
+          !moviesSearch.includes(movie)
         ) {
           setMoviesSearch((prev) => [...prev, movie]);
         }

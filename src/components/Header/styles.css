@@ -65,3 +65,23 @@ header {
   font-style: italic;
   text-decoration: none;
 }
+
+@media (max-width: 465px) {
+  .content_not_in_login {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .search_area {
+    justify-content: center;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    width: 100%;
+  }
+  .search_input {
+    order: -1;
+    margin-right: 0;
+    width: calc(100% - 6rem);
+  }
+}
