@@ -5,8 +5,7 @@
 <p align="center">
     <a href="#tecnologias">Tecnologias</a> &nbsp;&nbsp;•&nbsp;&nbsp;
     <a href="#pré-requisitos">Pré-requisitos</a> &nbsp;&nbsp;•&nbsp;&nbsp;
-    <a href="#rodando-o-front-end">Rodar a aplicação</a> &nbsp;&nbsp;•&nbsp;&nbsp;
-    <a href="#testar">Testar</a>
+    <a href="#rodando-o-front-end">Rodar a aplicação</a>
 </p>
 
 ---
@@ -14,9 +13,13 @@
 <br><br>
 
 <div align="center">
-    <img alt="" src="./.github/fullflixImage.png">
-    <br><br>
-    <img alt="" src="./.github/fullflixGif.gif">
+    <img alt="" src="./.github/fullflixGifLogin.gif">
+    <br>
+    <img alt="" src="./.github/fullflixGifSignup.gif">
+    <br>
+    <img alt="" src="./.github/fullflixGifHome.gif">
+    <br>
+    <img alt="" src="./.github/fullflixGifSearchAndAccount.gif">
 </div>
 
 <br><br>
@@ -26,7 +29,15 @@
 Para o desenvolvimento deste projeto foram utilizadas as seguintes tecnologias:
 
 - [React](https://reactjs.org/)
-- [Materia UI](https://mui.com/)
+- [Material UI](https://mui.com/)
+- [Context API](https://pt-br.reactjs.org/docs/context.html)
+- [React Router](https://reactrouter.com/en/main)
+- [Axios](https://axios-http.com/ptbr/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://github.com/jquense/yup)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://prettier.io/)
 
 <br>
 
@@ -55,10 +66,6 @@ $ npm run dev
 ```
 
 <br>
-
-## Testar
-
-- Caso queira testar o projeto sem instalar nada: https://fullflix.netlify.app/
 
 ---
 
