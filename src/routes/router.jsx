@@ -8,11 +8,13 @@ import Plans from '../pages/Signup/Plans';
 import Register from '../pages/Signup/Register';
 import Account from '../pages/Account';
 import Search from '../pages/Search';
+import Error404 from '../pages/Error404';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <Error404 />,
     children: [
       {
         path: '/',
