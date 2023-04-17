@@ -1,15 +1,16 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import './styles.css';
+import ClearIcon from '@mui/icons-material/Clear';
 import { SearchContext } from '../../contexts/Search/SearchContext';
 
 export default function Header() {
   const { research } = useContext(SearchContext);
   const [blackHeader, setBlackHeader] = useState(false);
   const [hideHeaderPart, setHideHeaderPart] = useState(false);
-  const searchInputRef = useRef();
+  const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,9 +39,19 @@ export default function Header() {
     };
   }, []);
 
-  const handleSearch = () => {
-    research(searchInputRef.current.value);
-    navigate('/search');
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' || e.type === 'click') {
+      research(searchInput);
+      navigate('/search');
+    }
+  };
+
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleClickClearIcon = () => {
+    setSearchInput('');
   };
 
   return (
@@ -53,12 +64,27 @@ export default function Header() {
           <div className="search_button" onClick={handleSearch}>
             <SearchIcon />
           </div>
-          <input
-            type="text"
-            className="search_input"
-            placeholder="Pesquisar"
-            ref={searchInputRef}
-          />
+          <div className="search_input_and_delete_button">
+            <input
+              type="text"
+              className="search_input"
+              placeholder="Pesquisar"
+              value={searchInput}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearch}
+            />
+            <div className="clear_icon" onClick={handleClickClearIcon}>
+              {searchInput.length > 0 && (
+                <ClearIcon
+                  style={{
+                    fontSize: '1.2rem',
+                    color: '#444',
+                    cursor: 'default',
+                  }}
+                />
+              )}
+            </div>
+          </div>
         </div>
         <Link to="/account">
           <AccountCircleIcon

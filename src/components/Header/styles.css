@@ -47,17 +47,35 @@ header {
   display: flex;
   align-items: center;
 }
-.search_input {
-  font-size: 1rem;
+.search_input_and_delete_button {
+  display: flex;
+  align-items: center;
   margin-right: 1.5rem;
-  padding: 0.5rem;
-  background-color: #eee;
   border: 1px solid #141414;
-  outline: none;
+  background-color: #eee;
   border-radius: 5px;
+  padding: 0.5rem 0.4rem 0.5rem 0.5rem;
+  width: 15rem;
+}
+.search_input {
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 0.5rem;
 }
 .search_input::placeholder {
   color: #444;
+}
+.clear_icon {
+  display: flex;
+  border-radius: 100px;
+  padding: 1px;
+  font-size: 1.2rem;
+}
+.clear_icon:hover {
+  background-color: rgba(127, 127, 127, 0.3);
 }
 .site_name a {
   color: #e50914;
