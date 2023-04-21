@@ -7,7 +7,7 @@ import { ModalContextProvider } from './contexts/Modal/ModalContext';
 import { AuthContextProvider } from './contexts/Auth/AuthContext';
 import { SearchContextProvider } from './contexts/Search/SearchContext';
 import router from './routes/router';
-import { RequestMoviesContextProvider } from './contexts/RequestMoviesContext/RequestMoviesContext';
+import { RequestMoviesContextProvider } from './contexts/RequestMovies/RequestMoviesContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

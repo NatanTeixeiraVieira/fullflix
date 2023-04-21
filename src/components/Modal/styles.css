@@ -38,6 +38,21 @@
   margin: 0 1rem;
   color: #fff;
 }
+.icon_add_my_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  right: 1rem;
+  border: 2px solid #aaa;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.icon_add_my_list:hover {
+  background-color: #333;
+  border-color: #fff;
+}
 .movie_info {
   display: flex;
   flex-direction: column;

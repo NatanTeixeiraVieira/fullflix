@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
-import { RequestMoviesContext } from '../../contexts/RequestMoviesContext/RequestMoviesContext';
+import { RequestMoviesContext } from '../../contexts/RequestMovies/RequestMoviesContext';
 
 export default function Home() {
   const { movieListRef, featuredMovie } = useContext(RequestMoviesContext);

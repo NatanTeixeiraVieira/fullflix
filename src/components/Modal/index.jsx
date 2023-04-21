@@ -1,13 +1,23 @@
 import { useContext, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
+import { useSetMyList } from '../../hooks/myList';
 
 export default function Modal() {
   const { trailerUrl, movieInfo, closeModal } = useContext(ModalContext);
+  const [videoHeight, setVideoHeight] = useState(
+    movieInfo.overview.length < 900 ? '28vw' : '24vw'
+  );
+  useEffect(() => {
+    handleVideoHeigth();
+  }, []);
+
+  const addMovieToMyList = useSetMyList();
+
   const genres = movieInfo.genres.map((genre) => genre.name).join(', ');
-  const [videoHeight, setVideoHeight] = useState(movieInfo.overview.length < 900 ? '28vw' : '24vw');
 
   const handleCloseModal = () => {
     closeModal();
@@ -22,9 +32,9 @@ export default function Modal() {
     }
   };
 
-  useEffect(() => {
-    handleVideoHeigth();
-  }, []);
+  const handleAddToMyList = () => {
+    addMovieToMyList(movieInfo.id);
+  };
 
   return (
     <div className="modal">
@@ -43,15 +53,28 @@ export default function Modal() {
             controls
           />
         ) : (
-          <p style={{ height: videoHeight }}>Desculpe, este conteúdo não está disponível</p>
+          <p style={{ height: videoHeight }}>
+            Desculpe, este conteúdo não está disponível
+          </p>
         )}
+      </div>
+      <div
+        className="icon_add_my_list"
+        onClick={handleAddToMyList}
+        style={{ top: `calc(${videoHeight} - 35px - 1rem)` }}
+      >
+        <AddIcon fontSize="large" />
       </div>
       <div className="movie_info">
         <div className="movie_firs_info">
           {movieInfo.vote_average && (
-            <span className="movie_vote_average">{movieInfo.vote_average.toFixed(1)} pontos</span>
+            <span className="movie_vote_average">
+              {movieInfo.vote_average.toFixed(1)} pontos
+            </span>
           )}
-          <span className="movie_first_air_date">{movieInfo.first_air_date}</span>
+          <span className="movie_first_air_date">
+            {movieInfo.first_air_date}
+          </span>
           <span className="movie_resolution">HD</span>
         </div>
         <div className="movie_description_and_second_info">

@@ -1,12 +1,18 @@
 import { useContext } from 'react';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
+import { useSetMyList } from '../../hooks/myList';
 
 export default function FeaturedMovie({ featuredMovie }) {
   const { showModal } = useContext(ModalContext);
+  const addMovieToMyList = useSetMyList();
 
   const handleShowModal = () => {
     showModal(featuredMovie.id);
+  };
+
+  const handleAddToMyList = () => {
+    addMovieToMyList(featuredMovie.id);
   };
 
   const movieYear = new Date(featuredMovie.first_air_date).getFullYear();
@@ -42,7 +48,11 @@ export default function FeaturedMovie({ featuredMovie }) {
             <button type="button" onClick={handleShowModal}>
               ▶ Assistir
             </button>
-            <button type="button" className="featured_movie-button_my_list">
+            <button
+              type="button"
+              className="featured_movie-button_my_list"
+              onClick={handleAddToMyList}
+            >
               + Minha lista
             </button>
           </div>

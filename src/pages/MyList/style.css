@@ -1,0 +1,12 @@
+.my_list {
+  display: flex;
+  background-color: #141414;
+  min-height: 100vh;
+  padding: 9rem 2rem;
+  width: 100%;
+}
+.my_list .movies {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}

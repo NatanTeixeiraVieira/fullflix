@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import Modal from '../../components/Modal';
 import Movie from '../../components/Movie';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
-import { RequestMoviesContext } from '../../contexts/RequestMoviesContext/RequestMoviesContext';
+import { RequestMoviesContext } from '../../contexts/RequestMovies/RequestMoviesContext';
 import { SearchContext } from '../../contexts/Search/SearchContext';
 import './styles.css';
 
@@ -13,19 +13,21 @@ export default function Search() {
   const { modalIsOpen } = useContext(ModalContext);
 
   useEffect(() => {
-    setMoviesSearch([]);
     movieListRef.current.forEach((item) => {
       item.items.results.forEach((movie) => {
         if (
-          (movie?.name?.toLowerCase() === search?.toLowerCase() ||
-            movie?.title?.toLowerCase() === search?.toLowerCase()) &&
-          !moviesSearch.includes(movie)
+          movie?.name?.toLowerCase() === search?.toLowerCase() ||
+          movie?.title?.toLowerCase() === search?.toLowerCase()
         ) {
           setMoviesSearch((prev) => [...prev, movie]);
         }
       });
     });
-  }, [search]);
+
+    return () => {
+      setMoviesSearch([]);
+    };
+  }, [search, movieListRef]);
 
   return (
     <div className="search">

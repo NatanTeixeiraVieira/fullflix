@@ -9,6 +9,7 @@ import Register from '../pages/Signup/Register';
 import Account from '../pages/Account';
 import Search from '../pages/Search';
 import Error404 from '../pages/Error404';
+import MyList from '../pages/MyList';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <Account />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: '/mylist',
+        element: (
+          <RequireAuth>
+            <MyList />
           </RequireAuth>
         ),
       },

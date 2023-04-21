@@ -60,43 +60,55 @@ export default function Header() {
         <Link to="/">Fullflix</Link>
       </div>
       <div className={`content_not_in_login ${hideHeaderPart ? 'hidden' : ''}`}>
-        <div className="search_area">
-          <div className="search_button" onClick={handleSearch}>
-            <SearchIcon />
-          </div>
-          <div className="search_input_and_delete_button">
-            <input
-              type="text"
-              className="search_input"
-              placeholder="Pesquisar"
-              value={searchInput}
-              onChange={handleSearchInput}
-              onKeyDown={handleSearch}
-            />
-            <div className="clear_icon" onClick={handleClickClearIcon}>
-              {searchInput.length > 0 && (
-                <ClearIcon
-                  style={{
-                    fontSize: '1.2rem',
-                    color: '#444',
-                    cursor: 'default',
-                  }}
-                />
-              )}
+        <nav className="navigation_menu">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/mylist">Minha lista</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="header_right_side">
+          <div className="search_area">
+            <div className="search_button" onClick={handleSearch}>
+              <SearchIcon />
+            </div>
+            <div className="search_input_and_delete_button">
+              <input
+                type="text"
+                className="search_input"
+                placeholder="Pesquisar"
+                value={searchInput}
+                onChange={handleSearchInput}
+                onKeyDown={handleSearch}
+              />
+              <div className="clear_icon" onClick={handleClickClearIcon}>
+                {searchInput.length > 0 && (
+                  <ClearIcon
+                    style={{
+                      fontSize: '1.2rem',
+                      color: '#444',
+                      cursor: 'default',
+                    }}
+                  />
+                )}
+              </div>
             </div>
           </div>
+          <Link to="/account">
+            <AccountCircleIcon
+              style={{
+                fontSize: '3rem',
+                color: '#fff',
+                backgroundColor: '#141414',
+                borderRadius: 100,
+                cursor: 'pointer',
+              }}
+            />
+          </Link>
         </div>
-        <Link to="/account">
-          <AccountCircleIcon
-            style={{
-              fontSize: '3rem',
-              color: '#fff',
-              backgroundColor: '#141414',
-              borderRadius: 100,
-              cursor: 'pointer',
-            }}
-          />
-        </Link>
       </div>
     </header>
   );
