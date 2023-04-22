@@ -5,7 +5,7 @@ import { useSetMyList } from '../../hooks/myList';
 
 export default function FeaturedMovie({ featuredMovie }) {
   const { showModal } = useContext(ModalContext);
-  const addMovieToMyList = useSetMyList();
+  const [addMovieToMyList] = useSetMyList();
 
   const handleShowModal = () => {
     showModal(featuredMovie.id);
@@ -13,6 +13,7 @@ export default function FeaturedMovie({ featuredMovie }) {
 
   const handleAddToMyList = () => {
     addMovieToMyList(featuredMovie.id);
+    alert('Conteúdo adicionado à sua lista');
   };
 
   const movieYear = new Date(featuredMovie.first_air_date).getFullYear();

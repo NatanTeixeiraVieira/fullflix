@@ -8,5 +8,9 @@
 .my_list .movies {
   display: flex;
   flex-wrap: wrap;
+}
+.my_list .no_list {
+  color: #fff;
+  font-size: 1.75rem;
   margin: 0 auto;
 }

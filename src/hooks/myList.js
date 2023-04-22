@@ -13,7 +13,13 @@ export const useSetMyList = () => {
     setPrevlist(JSON.parse(localStorage.getItem('myList')));
   };
 
-  return addMovieToMyList;
+  const removeMovieToMyList = (movieId) => {
+    const list = JSON.parse(localStorage.getItem('myList')) ?? [];
+    const listFiltered = list.filter((movie) => movie !== movieId);
+    localStorage.setItem('myList', JSON.stringify(listFiltered));
+  };
+
+  return [addMovieToMyList, removeMovieToMyList];
 };
 
 export const useGetMyList = () => {
@@ -28,7 +34,7 @@ export const useGetMyList = () => {
           setMyList((prev) => [...prev, movie]);
         }
       });
-    });
+    }, []);
 
     return () => {
       setMyList([]);

@@ -8,7 +8,6 @@ import Modal from '../../components/Modal';
 
 export default function MyList() {
   const { modalIsOpen } = useContext(ModalContext);
-
   const myList = useGetMyList();
 
   return (
@@ -19,6 +18,11 @@ export default function MyList() {
         ))}
         {modalIsOpen && <Modal />}
       </div>
+      {!myList.length && (
+        <div className="no_list">
+          Nenhum conteúdo está adicionado à sua lista.
+        </div>
+      )}
     </div>
   );
 }

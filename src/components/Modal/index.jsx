@@ -2,20 +2,25 @@ import { useContext, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
 import './styles.css';
 import { useSetMyList } from '../../hooks/myList';
 
 export default function Modal() {
   const { trailerUrl, movieInfo, closeModal } = useContext(ModalContext);
+  const [isFavorite, setIsFavorite] = useState(() =>
+    JSON.parse(localStorage.getItem('myList'))?.includes(movieInfo.id)
+  );
   const [videoHeight, setVideoHeight] = useState(
     movieInfo.overview.length < 900 ? '28vw' : '24vw'
   );
+
+  const [addMovieToMyList, removeMovieToMyList] = useSetMyList();
+
   useEffect(() => {
     handleVideoHeigth();
   }, []);
-
-  const addMovieToMyList = useSetMyList();
 
   const genres = movieInfo.genres.map((genre) => genre.name).join(', ');
 
@@ -32,8 +37,15 @@ export default function Modal() {
     }
   };
 
-  const handleAddToMyList = () => {
-    addMovieToMyList(movieInfo.id);
+  const handleMyList = () => {
+    if (isFavorite) {
+      removeMovieToMyList(movieInfo.id);
+      alert('Conteúdo removido da sua lista');
+    } else {
+      addMovieToMyList(movieInfo.id);
+      alert('Conteúdo adicionado à sua lista');
+    }
+    setIsFavorite((prev) => !prev);
   };
 
   return (
@@ -59,11 +71,15 @@ export default function Modal() {
         )}
       </div>
       <div
-        className="icon_add_my_list"
-        onClick={handleAddToMyList}
-        style={{ top: `calc(${videoHeight} - 35px - 1rem)` }}
+        className="icon_add_remove_my_list"
+        onClick={handleMyList}
+        style={{ top: `calc(${videoHeight} - 38px - 1rem)` }}
       >
-        <AddIcon fontSize="large" />
+        {isFavorite ? (
+          <RemoveIcon fontSize="large" />
+        ) : (
+          <AddIcon fontSize="large" />
+        )}
       </div>
       <div className="movie_info">
         <div className="movie_firs_info">
