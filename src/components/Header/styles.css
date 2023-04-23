@@ -110,7 +110,7 @@ header {
     justify-content: flex-end;
     align-items: flex-start;
     position: fixed;
-    padding: calc((4.375rem - 3rem) / 2);
+    padding: calc((4.375rem - 3rem) / 2) 0 2rem 2rem;
     right: -300px;
     right: 0;
     top: 0;
