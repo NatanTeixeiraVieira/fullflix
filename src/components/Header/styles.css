@@ -40,6 +40,7 @@ header {
 }
 .header_right_side {
   display: flex;
+  align-items: center;
 }
 .hidden {
   display: none;
@@ -103,22 +104,86 @@ header {
   text-decoration: none;
 }
 
-@media (max-width: 465px) {
+@media (max-width: 1020px) {
   .content_not_in_login {
     flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: fixed;
+    padding: calc((4.375rem - 3rem) / 2);
+    right: -300px;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #333;
+    transition: all ease 0.2s;
+  }
+  .navigation_menu ul {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0 0 0;
   }
   .search_area {
-    justify-content: center;
-    position: absolute;
-    top: 4.5rem;
-    left: 0;
+    z-index: 0;
+    position: fixed;
+    width: calc(50% + 2.5rem);
+    top: calc((4.375rem - 34.4px) / 2);
+    left: 25%;
+  }
+  .search_input_and_delete_button {
+    margin-right: 0;
     width: 100%;
   }
-  .search_input {
-    order: -1;
-    margin-right: 0;
-    width: calc(100% - 6rem);
+  .menu_lines {
+    position: fixed;
+    width: 1.8rem;
+    height: 1.8rem;
+    right: 2rem;
+    top: calc((4.375rem - 1.8rem) / 2);
+  }
+  .menu_lines span {
+    display: block;
+    width: 100%;
+    height: 0.29rem;
+    margin-bottom: 0.29rem;
+    background-color: #ddd;
+    border-radius: 3px;
+    transition: all ease 0.2s;
+  }
+  .menu_lines_animation span:nth-child(1) {
+    transform-origin: 3% 0%;
+    transform: rotate(45deg);
+  }
+  .menu_lines_animation span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu_lines_animation span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .menu_lines_animation span:nth-child(1) {
+    transform-origin: 5% 0%;
+  }
+  .search_area {
+    width: 100%;
+    padding: 0 2rem 1rem 2rem;
+    top: 4.375rem;
+    left: 0;
+  }
+  .fillBackground .search_area {
+    background-color: #141414;
+  }
+}
+
+@media (max-width: 300px) {
+  .content_not_in_login {
+    width: 100%;
+  }
+  .menu_lines_animation span:nth-child(1) {
+    transform-origin: 0% 0%;
   }
 }
