@@ -1,16 +1,41 @@
 .my_list {
-  display: flex;
-  background-color: #141414;
+  background-color: #111;
   min-height: 100vh;
   padding: 9rem 2rem;
-  width: 100%;
 }
 .my_list .movies {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  width: 86%;
+  gap: 0.5rem;
+  margin: 0 auto;
+  justify-items: center;
 }
 .my_list .no_list {
   color: #fff;
   font-size: 1.75rem;
-  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .my_list .movies {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 0;
+  }
+}
+
+@media (max-width: 570px) {
+  .my_list .movies {
+    width: 98%;
+  }
+}
+
+@media (max-width: 350px) {
+  .my_list {
+    padding: 9rem 1.7rem;
+  }
+
+  .my_list .movies {
+    width: 100%;
+  }
 }
