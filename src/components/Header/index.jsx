@@ -80,7 +80,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="header_right_side">
-          {pathname === '/' && (
+          {(pathname === '/' || pathname === '/search') && (
             <div
               className="search_area"
               style={{ display: showMenu && 'none' }}
