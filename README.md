@@ -13,13 +13,15 @@
 <br><br>
 
 <div align="center">
-    <img alt="" src="./.github/fullflixGifLogin.gif">
+    <img alt="Gif do login" src="./.github/fullflixGifLogin.gif">
     <br>
-    <img alt="" src="./.github/fullflixGifSignup.gif">
+    <img alt="Gif do cadastro" src="./.github/fullflixGifSignup.gif">
     <br>
-    <img alt="" src="./.github/fullflixGifHome.gif">
+    <img alt="Gif da página principal" src="./.github/fullflixGifHome.gif">
     <br>
-    <img alt="" src="./.github/fullflixGifSearchAndAccount.gif">
+    <img alt="Gif da minha lista" src="./.github/fullflixGifMyList.gif">
+    <br>
+    <img alt="Gif da opção de pesquisa e da conta" src="./.github/fullflixGifSearchAndAccount.gif">
 </div>
 
 <br><br>
