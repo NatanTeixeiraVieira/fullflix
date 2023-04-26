@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useCallback, useMemo, useReducer } from 'react';
 import reducer from './signupReducer';
 import SignupActions from './signupActions';
 
@@ -23,19 +23,28 @@ export function SignupContextProvider({ children }) {
     setRegisterIsValid,
   } = SignupActions;
 
-  const changePlan = (plan) => {
-    dispatch({ type: setPlan, payload: plan });
-  };
-  const changeCurrentStep = (step) => {
-    dispatch({ type: setCurrentStep, payload: step });
-  };
-  const changeAllInputValuesOnRegister = (datas) => {
-    dispatch({ type: setAllInputValuesOnRegister, payload: datas });
-  };
-  const changeRegisterIsValid = () => {
+  const changePlan = useCallback(
+    (plan) => {
+      dispatch({ type: setPlan, payload: plan });
+    },
+    [setPlan]
+  );
+  const changeCurrentStep = useCallback(
+    (step) => {
+      dispatch({ type: setCurrentStep, payload: step });
+    },
+    [setCurrentStep]
+  );
+  const changeAllInputValuesOnRegister = useCallback(
+    (datas) => {
+      dispatch({ type: setAllInputValuesOnRegister, payload: datas });
+    },
+    [setAllInputValuesOnRegister]
+  );
+  const changeRegisterIsValid = useCallback(() => {
     dispatch({ type: setRegisterIsValid });
-  };
-  const subscribe = () => {
+  }, [setRegisterIsValid]);
+  const subscribe = useCallback(() => {
     const validateDateAndTime = (date) => (date < 10 ? `0${date}` : date);
 
     const id = Date.now();
@@ -63,17 +72,26 @@ export function SignupContextProvider({ children }) {
     };
     localStorage.setItem(state.email, JSON.stringify(userDatas));
     localStorage.setItem('isLogged', state.email);
-  };
+  }, [state.email, state.name, state.password, state.plan]);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const value = {
-    ...state,
-    changePlan,
-    changeCurrentStep,
-    changeAllInputValuesOnRegister,
-    changeRegisterIsValid,
-    subscribe,
-  };
+  const value = useMemo(
+    () => ({
+      ...state,
+      changePlan,
+      changeCurrentStep,
+      changeAllInputValuesOnRegister,
+      changeRegisterIsValid,
+      subscribe,
+    }),
+    [
+      state,
+      changePlan,
+      changeCurrentStep,
+      changeAllInputValuesOnRegister,
+      changeRegisterIsValid,
+      subscribe,
+    ]
+  );
 
   return (
     <SignupContext.Provider value={value}>{children}</SignupContext.Provider>

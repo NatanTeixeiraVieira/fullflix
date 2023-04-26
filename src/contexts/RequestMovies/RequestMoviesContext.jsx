@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef, useState } from 'react';
+import { createContext, useEffect, useMemo, useRef, useState } from 'react';
 import Tmdb from '../../services/Tmdb';
 
 export const RequestMoviesContext = createContext();
@@ -25,9 +25,13 @@ export function RequestMoviesContextProvider({ children }) {
     loadAll();
   }, []);
 
+  const value = useMemo(
+    () => ({ featuredMovie, movieListRef }),
+    [featuredMovie]
+  );
+
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <RequestMoviesContext.Provider value={{ featuredMovie, movieListRef }}>
+    <RequestMoviesContext.Provider value={value}>
       {children}
     </RequestMoviesContext.Provider>
   );

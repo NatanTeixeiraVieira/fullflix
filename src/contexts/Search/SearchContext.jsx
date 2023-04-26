@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 export const SearchContext = createContext();
 
@@ -9,10 +9,9 @@ export function SearchContextProvider({ children }) {
     setSearch(searchValue);
   };
 
+  const value = useMemo(() => ({ search, research }), [search]);
+
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <SearchContext.Provider value={{ search, research }}>
-      {children}
-    </SearchContext.Provider>
+    <SearchContext.Provider value={value}>{children}</SearchContext.Provider>
   );
 }

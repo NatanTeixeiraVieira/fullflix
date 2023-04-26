@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useMemo, useReducer } from 'react';
 import Tmdb from '../../services/Tmdb';
 import reducer from './modalReducer';
 
@@ -16,7 +16,9 @@ export function ModalContextProvider({ children }) {
   const showModal = async (movieId) => {
     const requestTrailer = await Tmdb.getMovieVideos(movieId);
     const trailerKey = requestTrailer?.results[0]?.key;
-    const trailerUrl = trailerKey ? `https://youtube.com/watch?v=${trailerKey}` : undefined;
+    const trailerUrl = trailerKey
+      ? `https://youtube.com/watch?v=${trailerKey}`
+      : undefined;
     const movieInfo = await Tmdb.getMovieInfo(movieId);
     dispatch({ type: 'showModal', payload: { trailerUrl, movieInfo } });
   };
@@ -25,10 +27,9 @@ export function ModalContextProvider({ children }) {
     dispatch({ type: 'closeModal', payload: initialValue });
   };
 
+  const value = useMemo(() => ({ ...state, showModal, closeModal }), [state]);
+
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <ModalContext.Provider value={{ ...state, showModal, closeModal }}>
-      {children}
-    </ModalContext.Provider>
+    <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
   );
 }

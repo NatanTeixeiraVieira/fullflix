@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useMemo } from 'react';
 
 export const AuthContext = createContext();
 
@@ -12,8 +12,7 @@ export function AuthContextProvider({ children }) {
     return false;
   };
 
-  return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AuthContext.Provider value={{ signin }}>{children}</AuthContext.Provider>
-  );
+  const value = useMemo(() => ({ signin }), []);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
