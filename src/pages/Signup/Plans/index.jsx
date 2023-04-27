@@ -8,16 +8,16 @@ import Tr from '../../../components/PlansTr';
 import './styles.css';
 
 export default function Plans() {
-  const { plan, changePlan, changeCurrentStep } = useContext(SignupContext);
+  const { plan, setPlan, setCurrentStep } = useContext(SignupContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    changeCurrentStep(1);
+    setCurrentStep(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSelectPlan = (evt) => {
-    changePlan(evt.target.name);
+    setPlan(evt.target.name);
   };
   const handleNextStep = () => {
     navigate('/signup/register');

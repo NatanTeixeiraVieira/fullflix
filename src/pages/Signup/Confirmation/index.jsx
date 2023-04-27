@@ -5,12 +5,12 @@ import { SignupContext } from '../../../contexts/Signup/SignupContext';
 import './styles.css';
 
 export default function Confirmation() {
-  const { name, email, password, plan, changeCurrentStep, subscribe } =
+  const { name, email, password, plan, setCurrentStep, subscribe } =
     useContext(SignupContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    changeCurrentStep(3);
+    setCurrentStep(3);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

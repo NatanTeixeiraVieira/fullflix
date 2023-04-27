@@ -28,9 +28,9 @@ export default function Register() {
     name,
     email,
     password,
-    changeCurrentStep,
-    changeAllInputValuesOnRegister,
-    changeRegisterIsValid,
+    setCurrentStep,
+    setAllInputValuesOnRegister,
+    setRegisterIsValid,
   } = useContext(SignupContext);
   const navigate = useNavigate();
 
@@ -44,18 +44,18 @@ export default function Register() {
   });
 
   useEffect(() => {
-    changeCurrentStep(2);
+    setCurrentStep(2);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     watch((value) => {
-      changeAllInputValuesOnRegister(value);
+      setAllInputValuesOnRegister(value);
     });
-  }, [watch, changeAllInputValuesOnRegister]);
+  }, [watch, setAllInputValuesOnRegister]);
 
   const onSubmit = () => {
-    changeRegisterIsValid();
+    setRegisterIsValid();
     navigate('/signup/confirmation');
   };
   const handleBackStep = () => {

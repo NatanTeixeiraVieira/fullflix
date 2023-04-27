@@ -1,25 +1,24 @@
-import SignupActions from './signupActions';
+import {
+  SET_ALL_INPUT_VALUES_ON_REGISTER,
+  SET_CURRENT_STEP,
+  SET_PLAN,
+  SET_REGISTER_IS_VALID,
+} from './signupActions';
 
 const modalReducer = (state, action) => {
-  const {
-    setCurrentStep,
-    setAllInputValuesOnRegister,
-    setPlan,
-    setRegisterIsValid,
-  } = SignupActions;
   switch (action.type) {
-    case setCurrentStep:
+    case SET_CURRENT_STEP:
       return { ...state, currentStep: action.payload };
-    case setAllInputValuesOnRegister:
+    case SET_ALL_INPUT_VALUES_ON_REGISTER:
       return {
         ...state,
         name: action.payload.name,
         email: action.payload.email,
         password: action.payload.password.trim(),
       };
-    case setPlan:
+    case SET_PLAN:
       return { ...state, plan: action.payload };
-    case setRegisterIsValid:
+    case SET_REGISTER_IS_VALID:
       return { ...state, registerIsValid: true };
     default:
       return state;

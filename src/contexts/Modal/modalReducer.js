@@ -1,13 +1,15 @@
+import { CLOSE_MODAL, SHOW_MODAL } from './actions';
+
 export default function modalReducer(state, action) {
   switch (action.type) {
-    case 'showModal':
+    case SHOW_MODAL:
       return {
         ...state,
         modalIsOpen: true,
         trailerUrl: action.payload.trailerUrl,
         movieInfo: action.payload.movieInfo,
       };
-    case 'closeModal':
+    case CLOSE_MODAL:
       return action.payload;
     default:
       return state;

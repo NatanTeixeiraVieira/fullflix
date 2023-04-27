@@ -1,6 +1,11 @@
 import { createContext, useCallback, useMemo, useReducer } from 'react';
 import reducer from './signupReducer';
-import SignupActions from './signupActions';
+import {
+  SET_ALL_INPUT_VALUES_ON_REGISTER,
+  SET_CURRENT_STEP,
+  SET_PLAN,
+  SET_REGISTER_IS_VALID,
+} from './signupActions';
 
 const initialState = {
   currentStep: 0,
@@ -16,34 +21,18 @@ export const SignupContext = createContext();
 export function SignupContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const {
-    setCurrentStep,
-    setAllInputValuesOnRegister,
-    setPlan,
-    setRegisterIsValid,
-  } = SignupActions;
-
-  const changePlan = useCallback(
-    (plan) => {
-      dispatch({ type: setPlan, payload: plan });
-    },
-    [setPlan]
-  );
-  const changeCurrentStep = useCallback(
-    (step) => {
-      dispatch({ type: setCurrentStep, payload: step });
-    },
-    [setCurrentStep]
-  );
-  const changeAllInputValuesOnRegister = useCallback(
-    (datas) => {
-      dispatch({ type: setAllInputValuesOnRegister, payload: datas });
-    },
-    [setAllInputValuesOnRegister]
-  );
-  const changeRegisterIsValid = useCallback(() => {
-    dispatch({ type: setRegisterIsValid });
-  }, [setRegisterIsValid]);
+  const setPlan = useCallback((plan) => {
+    dispatch({ type: SET_PLAN, payload: plan });
+  }, []);
+  const setCurrentStep = useCallback((step) => {
+    dispatch({ type: SET_CURRENT_STEP, payload: step });
+  }, []);
+  const setAllInputValuesOnRegister = useCallback((datas) => {
+    dispatch({ type: SET_ALL_INPUT_VALUES_ON_REGISTER, payload: datas });
+  }, []);
+  const setRegisterIsValid = useCallback(() => {
+    dispatch({ type: SET_REGISTER_IS_VALID });
+  }, []);
   const subscribe = useCallback(() => {
     const validateDateAndTime = (date) => (date < 10 ? `0${date}` : date);
 
@@ -77,18 +66,18 @@ export function SignupContextProvider({ children }) {
   const value = useMemo(
     () => ({
       ...state,
-      changePlan,
-      changeCurrentStep,
-      changeAllInputValuesOnRegister,
-      changeRegisterIsValid,
+      setPlan,
+      setCurrentStep,
+      setAllInputValuesOnRegister,
+      setRegisterIsValid,
       subscribe,
     }),
     [
       state,
-      changePlan,
-      changeCurrentStep,
-      changeAllInputValuesOnRegister,
-      changeRegisterIsValid,
+      setPlan,
+      setCurrentStep,
+      setAllInputValuesOnRegister,
+      setRegisterIsValid,
       subscribe,
     ]
   );
