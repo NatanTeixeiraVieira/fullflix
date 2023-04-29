@@ -53,6 +53,24 @@
   background-color: #333;
   border-color: #fff;
 }
+.removeFromMyList::after,
+.addToMyList::after {
+  font-size: 0.9rem;
+  position: fixed;
+  margin-bottom: 5rem;
+  width: 9.5rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.2rem;
+  border-radius: 5px;
+  text-align: right;
+  background-color: #fff;
+  color: #000;
+}
+.removeFromMyList:hover::after {
+  content: 'Remover da minha lista';
+}
+.addToMyList:hover::after {
+  content: 'Adicionar à minha lista';
+}
 .movie_info {
   display: flex;
   flex-direction: column;

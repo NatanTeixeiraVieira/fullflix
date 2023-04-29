@@ -71,7 +71,9 @@ export default function Modal() {
         )}
       </div>
       <div
-        className="icon_add_remove_my_list"
+        className={`icon_add_remove_my_list ${
+          isFavorite ? 'removeFromMyList' : 'addToMyList'
+        }`}
         onClick={handleMyList}
         style={{ top: `calc(${videoHeight} - 38px - 1rem)` }}
       >
