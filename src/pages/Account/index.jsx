@@ -9,6 +9,7 @@ export default function Account() {
     if (logout) {
       localStorage.removeItem('isLogged');
       navigate('/login');
+      window.location.reload();
     }
   };
   const handleCancelPlan = () => {
@@ -18,6 +19,7 @@ export default function Account() {
     if (cancelPlan) {
       localStorage.clear();
       navigate('/login');
+      window.location.reload();
     }
   };
 

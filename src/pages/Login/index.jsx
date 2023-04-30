@@ -34,6 +34,7 @@ export default function Login() {
   const onSubmit = (value) => {
     if (signin(value)) {
       navigate('/');
+      window.location.reload();
       return;
     }
     setLoginIsInvalid(true);

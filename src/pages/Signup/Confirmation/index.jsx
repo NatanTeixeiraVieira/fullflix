@@ -11,8 +11,7 @@ export default function Confirmation() {
 
   useEffect(() => {
     setCurrentStep(3);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setCurrentStep]);
 
   const handleBackStep = () => {
     navigate('/signup/register');
@@ -20,6 +19,7 @@ export default function Confirmation() {
   const handleSubscribe = () => {
     subscribe();
     navigate('/');
+    window.location.reload();
   };
 
   return (
