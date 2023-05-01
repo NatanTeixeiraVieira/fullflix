@@ -19,7 +19,6 @@ export default function Confirmation() {
   const handleSubscribe = () => {
     subscribe();
     navigate('/');
-    window.location.reload();
   };
 
   return (

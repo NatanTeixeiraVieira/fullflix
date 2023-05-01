@@ -1,5 +1,5 @@
 .login {
-  background-image: url('../../assets/login-background-image.jpg');
+  background-image: url('/assets/login-background-image.jpg');
   background-position: center;
   height: 100vh;
   display: flex;

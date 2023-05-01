@@ -31,15 +31,14 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const page = window.location.pathname;
-    if (page.includes('/login') || page.includes('/signup')) {
+    if (pathname === '/login' || pathname.includes('/signup')) {
       setHideHeaderPart(true);
     }
 
     return () => {
       setHideHeaderPart(false);
     };
-  }, []);
+  }, [pathname]);
 
   const handleSearch = (e) => {
     if (e.key === 'Enter' || e.type === 'click') {

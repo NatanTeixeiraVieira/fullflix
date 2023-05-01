@@ -25,7 +25,7 @@ export default function Home() {
 
       {movieListRef.current.length === 0 ? (
         <div className="loading">
-          <img src="../../src/assets/loading-image.png" alt="Carregando" />
+          <img src="/assets/loading-image.png" alt="Carregando" />
         </div>
       ) : (
         <Footer />
