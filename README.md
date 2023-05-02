@@ -5,7 +5,8 @@
 <p align="center">
     <a href="#tecnologias">Tecnologias</a> &nbsp;&nbsp;•&nbsp;&nbsp;
     <a href="#pré-requisitos">Pré-requisitos</a> &nbsp;&nbsp;•&nbsp;&nbsp;
-    <a href="#rodando-o-front-end">Rodar a aplicação</a>
+    <a href="#instalar-o-front-end">Instalar a aplicação</a> &nbsp;&nbsp;•&nbsp;&nbsp;
+    <a href="#testar-a-aplicação">Testar a aplicação</a>
 </p>
 
 ---
@@ -51,7 +52,7 @@ O editor de código recomendado é o [Visual Studio Code](https://code.visualstu
 
 <br>
 
-## Rodando o Front-End
+## Instalar o Front-End
 
 ```bash
 # Clone este repositório
@@ -68,6 +69,10 @@ $ npm run dev
 ```
 
 <br>
+
+## Testar a aplicação
+
+Caso queira testar a aplicação sem instalar nada: https://fullflix.netlify.app/
 
 ---
 
