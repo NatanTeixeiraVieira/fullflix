@@ -1,5 +1,5 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import './styles.css';
@@ -12,8 +12,11 @@ export default function Header() {
   const [hideHeaderPart, setHideHeaderPart] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [showMenu, setShowMenu] = useState(false);
+
   const navigate = useNavigate();
   const { pathname } = useLocation();
+
+  const inputSearchRef = useRef();
 
   useEffect(() => {
     const scrollMove = () => {
@@ -53,6 +56,7 @@ export default function Header() {
 
   const handleClickClearIcon = () => {
     setSearchInput('');
+    inputSearchRef.current.focus();
   };
 
   const handleShowMenu = () => {
@@ -95,6 +99,7 @@ export default function Header() {
                   value={searchInput}
                   onChange={handleSearchInput}
                   onKeyDown={handleSearch}
+                  ref={inputSearchRef}
                 />
                 <div className="clear_icon" onClick={handleClickClearIcon}>
                   {searchInput.length > 0 && (

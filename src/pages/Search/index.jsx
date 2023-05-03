@@ -36,6 +36,14 @@ export default function Search() {
           moviesSearch.map((movie) => (
             <Movie movie={movie} key={movie.id} search="search" />
           ))}
+        {!moviesSearch.length && (
+          <div className="content_not_found">
+            <p>
+              Nenhum conteúdo correspondente a &quot;{search}&quot; foi
+              encontrado.
+            </p>
+          </div>
+        )}
         {modalIsOpen && <Modal />}
       </div>
     </div>

@@ -9,9 +9,18 @@
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+.search .content_not_found {
+  width: 100%;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #eee;
+}
 
 @media (max-width: 465px) {
   .search {
     padding: 10rem 2rem;
+  }
+  .search .content_not_found {
+    font-size: 1.2rem;
   }
 }
