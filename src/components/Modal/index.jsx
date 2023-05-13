@@ -1,11 +1,14 @@
 import { useContext, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import CloseIcon from '@mui/icons-material/Close';
+
 import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
 import RemoveIcon from '@mui/icons-material/Remove';
+
 import { ModalContext } from '../../contexts/Modal/ModalContext';
-import './styles.css';
 import { useSetMyList } from '../../hooks/myList';
+
+import './styles.css';
 
 export default function Modal() {
   const { trailerUrl, movieInfo, closeModal } = useContext(ModalContext);

@@ -1,14 +1,17 @@
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useContext, useRef, useState } from 'react';
-import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+
+import { yupResolver } from '@hookform/resolvers/yup';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { AuthContext } from '../../contexts/Auth/AuthContext';
-import './styles.css';
-import validateEmail from '../../utils/validations';
+import * as yup from 'yup';
+
 import Error from '../../components/Error';
+import { AuthContext } from '../../contexts/Auth/AuthContext';
+import validateEmail from '../../utils/validations';
+
+import './styles.css';
 
 const validationSchema = yup.object({
   email: yup

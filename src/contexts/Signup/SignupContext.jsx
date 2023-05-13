@@ -1,11 +1,12 @@
 import { createContext, useCallback, useMemo, useReducer } from 'react';
-import reducer from './signupReducer';
+
 import {
   SET_ALL_INPUT_VALUES_ON_REGISTER,
   SET_CURRENT_STEP,
   SET_PLAN,
   SET_REGISTER_IS_VALID,
 } from './signupActions';
+import reducer from './signupReducer';
 
 const initialState = {
   currentStep: 0,

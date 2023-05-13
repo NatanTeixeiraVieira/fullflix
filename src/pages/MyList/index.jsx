@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import Movie from '../../components/Movie';
 
-import './style.css';
-import { useGetMyList } from '../../hooks/myList';
-import { ModalContext } from '../../contexts/Modal/ModalContext';
 import Modal from '../../components/Modal';
+import Movie from '../../components/Movie';
+import { ModalContext } from '../../contexts/Modal/ModalContext';
+import { useGetMyList } from '../../hooks/myList';
+
+import './styles.css';
 
 export default function MyList() {
   const { modalIsOpen } = useContext(ModalContext);

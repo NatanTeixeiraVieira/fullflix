@@ -1,8 +1,11 @@
 import { useState } from 'react';
+
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import './styles.css';
+
 import Movie from '../Movie';
+
+import './styles.css';
 
 export default function MovieRow({ item, key }) {
   const [scrollX, setscrollX] = useState(0);

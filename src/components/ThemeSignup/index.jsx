@@ -1,6 +1,8 @@
 import { useContext } from 'react';
+
 import { SignupContext } from '../../contexts/Signup/SignupContext';
 import SignupItem from '../SignupItem';
+
 import './styles.css';
 
 export default function ThemeSignup({ children }) {

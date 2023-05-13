@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import LiveTvIcon from '@mui/icons-material/LiveTv';
+
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CheckIcon from '@mui/icons-material/Check';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+
 import './styles.css';
 
 export default function SignupItem({

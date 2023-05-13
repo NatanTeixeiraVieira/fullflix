@@ -1,10 +1,13 @@
-import CheckIcon from '@mui/icons-material/Check';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
-import { SignupContext } from '../../../contexts/Signup/SignupContext';
-import ThemeSignup from '../../../components/ThemeSignup';
+import { useNavigate } from 'react-router-dom';
+
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import CheckIcon from '@mui/icons-material/Check';
+
 import Tr from '../../../components/PlansTr';
+import ThemeSignup from '../../../components/ThemeSignup';
+import { SignupContext } from '../../../contexts/Signup/SignupContext';
+
 import './styles.css';
 
 export default function Plans() {

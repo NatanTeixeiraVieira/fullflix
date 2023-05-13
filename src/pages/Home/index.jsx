@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 
 import FeaturedMovie from '../../components/FeaturedMovie';
-import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
+import MovieRow from '../../components/MovieRow';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
-import './styles.css';
 import { RequestMoviesContext } from '../../contexts/RequestMovies/RequestMoviesContext';
+
+import './styles.css';
 
 export default function Home() {
   const { movieListRef, featuredMovie } = useContext(RequestMoviesContext);

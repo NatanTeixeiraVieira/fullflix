@@ -1,10 +1,13 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
-import './styles.css';
+
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ClearIcon from '@mui/icons-material/Clear';
+import SearchIcon from '@mui/icons-material/Search';
+
 import { SearchContext } from '../../contexts/Search/SearchContext';
+
+import './styles.css';
 
 export default function Header() {
   const { research } = useContext(SearchContext);

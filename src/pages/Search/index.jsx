@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
+
 import Modal from '../../components/Modal';
 import Movie from '../../components/Movie';
 import { ModalContext } from '../../contexts/Modal/ModalContext';
 import { RequestMoviesContext } from '../../contexts/RequestMovies/RequestMoviesContext';
 import { SearchContext } from '../../contexts/Search/SearchContext';
+
 import './styles.css';
 
 export default function Search() {

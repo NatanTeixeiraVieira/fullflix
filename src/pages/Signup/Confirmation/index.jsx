@@ -1,7 +1,9 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import ThemeSignup from '../../../components/ThemeSignup';
 import { SignupContext } from '../../../contexts/Signup/SignupContext';
+
 import './styles.css';
 
 export default function Confirmation() {

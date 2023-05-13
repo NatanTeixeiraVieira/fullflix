@@ -1,7 +1,8 @@
 import { createContext, useMemo, useReducer } from 'react';
+
 import Tmdb from '../../services/Tmdb';
-import reducer from './modalReducer';
 import { CLOSE_MODAL, SHOW_MODAL } from './actions';
+import reducer from './modalReducer';
 
 const initialValue = {
   modalIsOpen: false,

@@ -1,7 +1,9 @@
 import { useContext } from 'react';
+
 import { ModalContext } from '../../contexts/Modal/ModalContext';
-import './styles.css';
 import { useSetMyList } from '../../hooks/myList';
+
+import './styles.css';
 
 export default function FeaturedMovie({ featuredMovie }) {
   const { showModal } = useContext(ModalContext);

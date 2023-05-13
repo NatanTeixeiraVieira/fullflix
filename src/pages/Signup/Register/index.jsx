@@ -1,12 +1,15 @@
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
+
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+import Error from '../../../components/Error';
 import ThemeSignup from '../../../components/ThemeSignup';
 import { SignupContext } from '../../../contexts/Signup/SignupContext';
-import Error from '../../../components/Error';
 import validateEmail from '../../../utils/validations';
+
 import './styles.css';
 
 const validationSchema = yup.object({

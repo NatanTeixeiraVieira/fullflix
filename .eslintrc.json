@@ -9,7 +9,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "eslint-plugin-import-helpers"],
   "rules": {
     // permite arquivos .js possuam JSX
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -28,6 +28,26 @@
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "react/self-closing-comp": "warn"
+    "react/self-closing-comp": "warn",
+
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always", // new line between groups
+        "groups": [
+          ["/^react/", "/^next/", "/^redux/"], // tudo que inicia com "react" e "redux"
+          "/styled-components/", // tudo o que for importado diretamente da biblioteca styled-components. Isso é para garantir que a primeira importação nos arquivos styles.js seja sempre a do styled-components.
+          "module", // tudo que é um módulo (qualquer biblioteca listada no arquivo package.json)
+          "/prop-types/", // a importação do prop-types
+          "/styles/", // os meus estilos
+          "/^~/pages/", // todas as minhas páginas
+          "/^~/components/", // todas os meus componentes
+          ["parent", "sibling", "index"], // qualquer arquivo pai, irmão ou filho do arquivo atual
+          "/routes/", // as minhas rotas
+          "/^~/" // todos os outros arquivos importados pelo alias configurado
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
   }
 }

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { SignupContext } from '../../contexts/Signup/SignupContext';
 
 export default function Tr({ description, basic, standard, premium }) {
