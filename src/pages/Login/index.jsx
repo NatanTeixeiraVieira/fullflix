@@ -1,8 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { AuthContext } from '../../contexts/Auth/AuthContext';
 import './styles.css';
 import validateEmail from '../../utils/validations';
@@ -24,11 +26,17 @@ const validationSchema = yup.object({
 export default function Login() {
   const { signin } = useContext(AuthContext);
   const [loginIsInvalid, setLoginIsInvalid] = useState();
+  const [isPassword, setIsPassword] = useState(true);
+  const inputPasswordRef = useRef();
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(validationSchema) });
+    formState: { errors, dirtyFields },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+    defaultValues: { email: '', password: '' },
+  });
   const navigate = useNavigate();
 
   const onSubmit = (value) => {
@@ -38,6 +46,11 @@ export default function Login() {
     }
     setLoginIsInvalid(true);
   };
+
+  const handleIsPassword = () => {
+    setIsPassword((prev) => !prev);
+  };
+
   return (
     <div className="login">
       <form className="login_form" onSubmit={handleSubmit(onSubmit)}>
@@ -56,14 +69,26 @@ export default function Login() {
             {...register('email')}
           />
           {errors?.email?.message && <Error>{errors.email.message}</Error>}
-          <input
-            type="password"
-            placeholder="Senha"
+          <div
+            className="password_and_icon_visibility"
             style={
               errors.password ? { border: '1px solid red' } : { border: 'none' }
             }
-            {...register('password')}
-          />
+          >
+            <input
+              type={isPassword ? 'password' : 'text'}
+              placeholder="Senha"
+              className="password"
+              ref={inputPasswordRef}
+              {...register('password')}
+            />
+            {dirtyFields.password && (
+              <div className="visibility_icon" onClick={handleIsPassword}>
+                {isPassword && <VisibilityIcon fontSize="inherit" />}
+                {!isPassword && <VisibilityOffIcon fontSize="inherit" />}
+              </div>
+            )}
+          </div>
           {errors?.password?.message && (
             <Error>{errors.password.message}</Error>
           )}

@@ -31,15 +31,23 @@
   flex-direction: column;
   margin: 1rem 0 1.5rem 0;
 }
-.login_inputs_and_button input:first-child {
+.login_inputs_and_button .email {
   margin-top: 0;
 }
-.login_inputs_and_button input {
+.login_inputs_and_button .email,
+.login_inputs_and_button .password_and_icon_visibility {
   margin-top: 1rem;
   background-color: #292929;
   outline: none;
+  height: 3.25rem;
 }
-.login_inputs_and_button input,
+.login_inputs_and_button .password_and_icon_visibility {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.login_inputs_and_button .email,
+.login_inputs_and_button .password_and_icon_visibility,
 .login_inputs_and_button button {
   font-size: 1rem;
   padding: 1rem;
@@ -49,6 +57,28 @@
 }
 .login_inputs_and_button input::placeholder {
   color: #aaa;
+}
+.login_inputs_and_button .password {
+  width: calc(100% - 3rem);
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+}
+.login_inputs_and_button .visibility_icon {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  right: 0.7rem;
+}
+.login_inputs_and_button .visibility_icon:hover {
+  background-color: rgba(136, 136, 136, 0.3);
+  border-radius: 100%;
 }
 .login_inputs_and_button button {
   font-weight: 700;
